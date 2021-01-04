@@ -1,3 +1,10 @@
+---
+title: Simple Sass Media Query Mixin
+date: 2020-12-24
+path: /simple-sass-media-query-mixin
+---
+
+```css
 /* breakpoints for media queries */
 $narrow: 480px;
 $mid: 768px;
@@ -10,5 +17,4 @@ $wide: 1000px;
     @media (min-width: $wide) { @content; }
 }
 
-$page-color: #f2f0e6;
-$text-color: #0a482d;
+```

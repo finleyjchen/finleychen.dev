@@ -1,25 +1,29 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import Mail from "../icons/mail.svg"
-import Twitter from "../icons/twitter.svg"
-import Github from "../icons/github.svg"
-import LinkedIn from "../icons/linkedin.svg"
+import { ThemeToggler } from 'gatsby-plugin-dark-mode'
+
 const Header = ({ siteTitle }) => (
   <header>
     <div>
         <Link to="/" className="logo">{siteTitle}</Link>
     </div>
-    <div>
+    <div className="header-line">
       <p className="banner">Web Development &amp; Design</p>
     </div>
-    <div class="">
-    <ul class="social-links">
-      <li class="menu-item"><a href="mailto:finleyjchen@gmail.com"><Mail /></a></li>
-      <li class="menu-item"><a href="https://github.com/finleyjchen"><Github /></a></li>
-      <li class="menu-item"><a href="https://twitter.com/finleychen"><Twitter /></a></li>
-      <li class="menu-item"><a href="https://www.linkedin.com/in/finleychen/"><LinkedIn /></a></li>
-    </ul>
+    <div>
+    {/* <ThemeToggler>
+        {({ theme, toggleTheme }) => (
+          <label>
+            <input
+              type="checkbox"
+              onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+              checked={theme === 'dark'}
+            />{' '}
+            Dark mode
+          </label>
+        )}
+      </ThemeToggler> */}
     </div>
   </header>
 )

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 export default function Template({ data }) {
@@ -8,9 +8,10 @@ export default function Template({ data }) {
   return (
     <Layout>
     <SEO title={frontmatter.title} />
+    <Link to="/work">See all work</Link>
     <div className="blog-post">
       <h1>{frontmatter.title}</h1>
-      <h2>{frontmatter.date}</h2>
+      <h2>{frontmatter.period}</h2>
       <div
         className="blog-post-content"
         dangerouslySetInnerHTML={{ __html: html }}
@@ -22,11 +23,10 @@ export default function Template({ data }) {
 
 export const pageQuery = graphql`
   query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    markdownRemark(fields: { slug: { eq: $path } }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        path
+        period
         title
       }
     }

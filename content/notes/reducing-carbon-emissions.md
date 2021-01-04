@@ -1,7 +1,6 @@
 ---
 title: Reducing your carbon emissions on WordPress
 date: 2020-03-11
-path: /reducing-wordpress-carbon-emissions
 ---
 
 ### Carbon Emissions from websites?

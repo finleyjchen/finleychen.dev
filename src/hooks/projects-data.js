@@ -1,0 +1,31 @@
+import { useStaticQuery, graphql } from "gatsby"
+export const useProjectsData = () => {
+  const { allMarkdownRemark } = useStaticQuery(
+    graphql`
+    query {
+        allMarkdownRemark(
+            sort: { order: DESC, fields: [frontmatter___date] }
+            filter: { fileAbsolutePath: { regex: "/(projects)/" } }
+            ) {
+                edges {
+                    node {
+                        id
+                        excerpt(pruneLength: 250)
+                        frontmatter {
+                            period
+                            path
+                            title
+                        }
+                        fileAbsolutePath
+                        fields {
+                            slug
+                        }
+                    }
+                }
+            }
+        }
+        `
+        )
+        
+        return allMarkdownRemark
+}

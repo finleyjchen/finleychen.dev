@@ -1,35 +1,16 @@
 import React from "react"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import Note from "../components/note"
-import "normalize.css"
+import Note from "../components/note-preview"
+import { useNotesData } from "../hooks/notes-data"
+import { useProjectsData } from "../hooks/projects-data"
 
 export default function IndexPage() {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-          edges {
-            node {
-              id
-              excerpt(pruneLength: 250)
-              frontmatter {
-                date(formatString: "MMMM DD, YYYY")
-                path
-                title
-              }
-            }
-          }
-        }
-      }
-    `
-  )
-
-  const { edges } = data.allMarkdownRemark
-
+  const { edges: notes } = useNotesData()
+  const { edges: projects } = useProjectsData()
   return (
     <Layout>
       <SEO title="Finley Chen" />
@@ -38,10 +19,13 @@ export default function IndexPage() {
           Hands-on, collaborative development for high converting, quality
           websites.
         </p>
-      {edges.map((note) => (
-        <Note title={note.node.frontmatter.title} date={note.node.frontmatter.date} url={note.node.frontmatter.path} />
-      ))}
-        <Link to="/about">About Me</Link>
+        <div className="hero-links">
+          <a href="mailto:finleyjchen@gmail.com">
+            <span>Request a Consultation</span></a>
+          or
+          <Link to="/work">
+            <span>See my work</span></Link>
+        </div>
       </div>
     </Layout>
   )

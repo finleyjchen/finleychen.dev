@@ -13,7 +13,17 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [{
+          resolve: `gatsby-remark-vscode`,
+          options: {
+            theme: 'Abyss' // Or install your favorite theme from GitHub
+          }
+        }]
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -21,9 +31,18 @@ module.exports = {
         path: `${__dirname}/content/notes`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/content/projects`,
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-dark-mode`,
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

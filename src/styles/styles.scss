@@ -1,44 +1,233 @@
-@import 'fonts';
-@import 'variables';
+@import "fonts";
+@import "variables";
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 body {
-    background-color:  $page-color;
-    font-family: "Suisse Intl", sans-serif;
+  background-color: $page-color;
+  color: $text-color;
+  font-family: "Suisse Intl", sans-serif;
+  font-size: 16px;
+  @include tablet {
+    font-size: 18px;
+  }
+  @include desktop {
+    font-size: 20px;
+  }
 }
 
 img {
-    max-width:100%;
-    height:auto;
+  max-width: 100%;
+  height: auto;
 }
 
 a {
-    text-decoration: none;
-    color: $text-color;
+  text-decoration: none;
+  color: $text-color;
+  position:relative;
 }
 
+
 header {
-    position:fixed;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    width:calc(100% - 1em);
-    z-index:1;
-    height:2em;
-    padding:0.5em;
-    border-bottom: 1px solid $text-color;
-    background-color: $page-color;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  height: 2em;
+  padding: 0 1em;
+  border-bottom: 1px solid $text-color;
+  background-color: $page-color;
+  width:100%;
+  .header-line {
+    display:none;
+    @include tablet {
+      display:block;
+    }
+  }
+}
+
+footer {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 2em);
+  z-index: 1;
+  height: 2em;
+  padding: 0 1em;
+  border-top: 1px solid $text-color;
+  background-color: $page-color;
+  .box {
+    display: flex;
+    svg {
+      width: 1.2em;
+    }
+  }
 }
 
 .content {
-    padding-top: 2em;
+  padding:2em 1em;
+
 }
 
 .social-links {
-    display:flex;
-    margin:0;
-    padding:0;
-    list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .headline {
-    font-size:3em;
+  font-size: 2.5em;
+  max-width: 25ch;
+  padding: 2em 0;
+  margin: auto;
+  text-align: center;
+}
+
+.hero-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    border: 1px solid $text-color;
+    padding: 0.5em 1em;
+    @include desktop {
+      padding: 1em 2em;
+    }
+    margin: 0 1em;
+    transition: background-color 250ms, color 250ms;
+    &:hover {
+      span {
+        transform: translate(3px, 3px);
+
+      }
+    }
+    background-color: $page-color;
+    &:before {
+      position:absolute;
+      content: "";
+      background-color: $text-color;
+      z-index:-1;
+      width:100%;
+      height:100%;
+      top:6px;
+      left:6px;
+      transition: 0.3s all ease;
+    }
+  }
+}
+
+.card-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2em 0;
+  @include desktop {
+    flex-direction: row;
+  }
+  h2 {
+    margin-bottom: 1em;
+    flex: 0 0 20%;
+  }
+  & > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    grid-gap: 1em;
+    width: 100%;
+  }
+}
+
+.note-preview {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  border: 1px solid $text-color;
+  span {
+    margin-bottom: 0.5em;
+  }
+}
+
+.work {
+  display: flex;
+  flex-direction:column;
+  @include tablet {
+    flex-direction:row;
+  }
+
+  .projects {
+    flex-grow:1;
+    display:flex;
+    flex-direction: column;
+    @include tablet {
+    }
+    .project-preview {
+      display:flex;
+      justify-content: space-between;
+      padding:1em 0;
+      border-top:1px solid $text-color;
+      .project-preview-title {
+
+      }
+      .project-preview-period {
+        font-style: italic;
+        font-size:0.75em;
+      }
+    }
+  }
+  
+  .testimonials {
+    flex: 0 0 33%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    grid-gap: 1em;
+    margin: auto;
+    @include tablet {
+      padding-left:1em;
+    }
+    .testimonial-author {
+      font-size:0.75em;
+    }
+  }
+}
+
+.about-header {
+  display: grid;
+  grid-gap:1em;
+  border-bottom: 1px solid $text-color;
+  margin:0 -1em;
+  @include tablet {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gatsby-image-wrapper {
+    border-right: 1px solid $text-color;
+  }
+}
+
+.services {
+  display: grid;
+  grid-gap:1em;
+  @include tablet {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  div {
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    border: 1px solid $text-color;
+    padding:1em;
+  }
+  svg {
+    width:2em;
+    height:2em;
+    margin-bottom:1em;
+    
+  }
 }
