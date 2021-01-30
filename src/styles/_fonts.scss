@@ -24,3 +24,17 @@
     font-weight: 300;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Suisse Works';
+    src: url('../fonts/SuisseWorks-Medium-WebS.woff') format('woff'), url('../fonts/SuisseWorks-Medium-WebS.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suisse Works';
+    src: url('../fonts/SuisseWorks-Bold-WebS.woff') format('woff'), url('../fonts/SuisseWorks-Bold-WebS.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}

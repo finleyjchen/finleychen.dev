@@ -8,9 +8,6 @@ const Header = ({ siteTitle }) => (
     <div>
         <Link to="/" className="logo">{siteTitle}</Link>
     </div>
-    <div className="header-line">
-      <p className="banner">Web Development &amp; Design</p>
-    </div>
     <div>
     {/* <ThemeToggler>
         {({ theme, toggleTheme }) => (

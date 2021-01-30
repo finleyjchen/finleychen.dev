@@ -20,33 +20,12 @@ import LinkedIn from "../icons/linkedin.svg"
       <p>Hi, I'm Finley. I make things on the web for small businesses. I'm currently a freelancer working on several projects, most notably <a href="https://www.skinnykitchen.com">Skinnykitchen</a> and a redesign for <a href="https://ironhardware.com">Paso Robles Ironworks</a>.    </p>     
         <p>I create custom WordPress websites that are fast, accessible, responsive, and SEO-optimized. </p>
         <div class="">
-      <ul class="social-links">
-        <li class="menu-item">
-          <a href="mailto:finleyjchen@gmail.com">
-            <Mail />
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="https://github.com/finleyjchen">
-            <Github />
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="https://twitter.com/finleychen">
-            <Twitter />
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="https://www.linkedin.com/in/finleychen/">
-            <LinkedIn />
-          </a>
-        </li>
-      </ul>
+
     </div>  
       </div>
     </div>
 
-<Services />
+{/* <Services /> */}
 
 <div class="divider"></div>
 

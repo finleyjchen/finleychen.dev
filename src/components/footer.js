@@ -1,21 +1,17 @@
 import { Link } from "gatsby"
 import React from "react"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Footer = () => (
   <footer>
     <div>
-      <Link to="/" className="box">
-      <svg viewBox="0 0 100 100" fill="currentColor"><rect width="100" height="100"></rect></svg>
-      </Link>
+      <Link to="/work">01<span> Selected Work</span></Link>
     </div>
     <div>
-      <Link to="/about">About</Link>
+      <Link to="/about">02<span> About</span></Link>
     </div>
     <div>
-      <Link to="/work">Work</Link>
-    </div>
-    <div>
-      <Link to="/notes">Notes</Link>
+      <Link to="/notes">03<span> Notes</span></Link>
     </div>
     
     <div>
