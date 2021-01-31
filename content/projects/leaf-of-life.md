@@ -1,6 +1,6 @@
 ---
 title: Leaf of Life
-period: early 2020
+period: 2020
 description: Cannabis Delivery
 url: https://leafoflifedelivery.com/
 ---

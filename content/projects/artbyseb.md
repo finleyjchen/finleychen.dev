@@ -1,6 +1,6 @@
 ---
 title: Art By Seb
-period: late 2020
+period: 2020
 description: Student Portfolio
 url: https://artbyseb.com/
 ---

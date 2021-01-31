@@ -1,6 +1,6 @@
 ---
 title: YourChristmasStore
-period: late 2017
+period: 2017
 description: Holiday Gift Shop
 url: https://yourchristmasstore.com/
 ---

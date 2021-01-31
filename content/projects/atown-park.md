@@ -1,6 +1,6 @@
 ---
 title: Atown Park
-period: late 2019
+period: 2019
 description: Skate Park
 url: https://atownpark.com/
 ---

@@ -19,7 +19,8 @@ export default function WorkPage() {
               <Project
                 title={note.node.frontmatter.title}
                 period={note.node.frontmatter.period}
-                url={note.node.fields.slug  }
+                url={note.node.fields.slug}
+                key={note.node.fields.slug}
               />
             ))}
           </div>

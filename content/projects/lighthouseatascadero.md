@@ -1,6 +1,6 @@
 ---
 title: Lighthouse Atascadero
-period: early 2018
+period: 2018
 description: Nonprofit
 url: https://lighthouseatascadero.org/
 ---

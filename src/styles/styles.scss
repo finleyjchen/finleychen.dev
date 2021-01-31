@@ -37,7 +37,9 @@ p {
 h1,
 h2,
 h3 {
-  letter-spacing: -0.05em;
+  letter-spacing: -2px;
+  font-family: "Suisse Works", serif;
+  font-weight:500;
 }
 
 header {
@@ -121,8 +123,11 @@ header {
 
 main {
   width: 100%;
+  max-width:66.67%;
   margin-left: 16.66%;
   margin-right: 16.66%;
+  margin-left:auto;
+  margin-right:auto;
   padding: 0 1em;
   min-height: calc(100vh - 2em);
 }
@@ -241,7 +246,7 @@ footer {
   display: flex;
   flex-direction: column;
   @include tablet {
-    flex-direction: row;
+    // flex-direction: row;
   }
 
   .projects {
@@ -255,17 +260,18 @@ footer {
       justify-content: space-between;
       padding: 1em 0;
       border-top: 1px solid $text-color;
+      align-items:center;
       &:first-child {
         border-top: none;
       }
       .project-preview-title {
-        font-size:3em;
+        font-size:2.5em;
         font-family: "Suisse Works", serif;
         font-weight:500;
+        letter-spacing: -2px;
       }
       .project-preview-period {
-        font-style: italic;
-        font-size: 0.75em;
+        // font-size: 0.75em;
       }
     }
   }

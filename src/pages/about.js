@@ -14,12 +14,12 @@ import LinkedIn from "../icons/linkedin.svg"
   <Layout>
     <SEO title="Finley Chen" />
 
-    <div class="about-header">
+    <div className="about-header">
       <Image />
       <div className="about-headline">
       <p>Hi, I'm Finley. I make things on the web for small businesses. I'm currently a freelancer working on several projects, most notably <a href="https://www.skinnykitchen.com">Skinnykitchen</a> and a redesign for <a href="https://ironhardware.com">Paso Robles Ironworks</a>.    </p>     
         <p>I create custom WordPress websites that are fast, accessible, responsive, and SEO-optimized. </p>
-        <div class="">
+        <div className="">
 
     </div>  
       </div>
@@ -27,11 +27,11 @@ import LinkedIn from "../icons/linkedin.svg"
 
 {/* <Services /> */}
 
-<div class="divider"></div>
+<div className="divider"></div>
 
 ## Experience 
 
-<div class="grid-2">
+<div className="grid-2">
 <div>
 
 2017 - *Present*  
@@ -56,12 +56,12 @@ I am a Front-End WordPress developer who has been making websites for small busi
 </p>
 </div>
 
-<div class="divider"></div>
+<div className="divider"></div>
 
 
 ## Tools I use
 
-<ul class="dash">
+<ul className="dash">
     <li>Platforms: WordPress, WooCommerce, Shopify, Laravel</li>
     <li>Front end: React, Gatsby, jQuery, Bootstrap, Sass, PHP</li>
     <li>Back end: Node.js, Express, Firebase, mySQL, mongoDB</li>
@@ -69,14 +69,14 @@ I am a Front-End WordPress developer who has been making websites for small busi
     <li>Photo/Graphics: Adobe Photoshop, Illustrator, XD</li>
 </ul>
 
-<div class="divider"></div>
+<div className="divider"></div>
 
 ## Etc
 
 I'm also an undergraduate Political Science student at California Polytechnic State University, San Luis Obispo. My academic work in political science studies the effects of different social media on an individual's political knowledge and participation. 
 
 
-<a href="/files/FinleyChenResume2020.pdf" class="button">Download Resume</a>
+<a href="/files/FinleyChenResume2020.pdf" className="button">Download Resume</a>
 
   </Layout>
 )

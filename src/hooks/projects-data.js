@@ -4,7 +4,7 @@ export const useProjectsData = () => {
     graphql`
     query {
         allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
+            sort: { order: DESC, fields: [frontmatter___period] }
             filter: { fileAbsolutePath: { regex: "/(projects)/" } }
             ) {
                 edges {

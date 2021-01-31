@@ -1,6 +1,6 @@
 ---
 title: Skinnykitchen
-period: mid 2020
+period: 2020
 description: Healthy Recipe Blog
 url: https://skinnykitchen.com/
 ---
