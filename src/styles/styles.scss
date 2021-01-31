@@ -6,41 +6,9 @@
 *:after {
   box-sizing: border-box;
 }
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
 
-@keyframes pulse {
-  0% {
-    background-color: #E2B6C4;
-  }
-  25% {
-    background-color: #CEA0AF;
-  }
-  50% {
-    background-color: #aec6cf;
-  }
-  75% {
-    background-color: #A0D7E2;
-  }
-  100% {
-    background-color: #E2B6C4;
-  }
-}
 body {
   background-color: $page-color;
-  animation: pulse 15s infinite;
-  background: linear-gradient(-45deg, #E2B6C4, #CEA0AF, #aec6cf, #A0D7E2, #E2B6C4);
-  background-size: 400% 400%;
-  animation: gradient 15s infinite;
   color: $text-color;
   font-family: "Suisse Intl", sans-serif;
   font-size: 16px;
@@ -48,7 +16,7 @@ body {
     font-size: 16px;
   }
   @include desktop {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -112,14 +80,16 @@ header {
   width: 16.66%;
   height: calc(100vh - 2em);
   border-right: 1px solid $text-color;
-
+  p {
+    margin: 0;
+  }
   .bio {
     p {
       position: absolute;
       bottom: 1em;
       left: 1em;
       line-height: 1.3;
-      margin: 0;
+      padding-right: 1em;
     }
   }
 
@@ -133,6 +103,20 @@ header {
     padding: 0;
     list-style: none;
   }
+
+  .meta {
+    svg {
+      width:2em;
+      height:2em;
+      border:1px solid $text-color;
+      border-radius:50%;
+    }
+    .time {
+      position: absolute;
+      bottom: 1em;
+      left: 1em;
+    }
+  }
 }
 
 main {
@@ -140,6 +124,7 @@ main {
   margin-left: 16.66%;
   margin-right: 16.66%;
   padding: 0 1em;
+  min-height: calc(100vh - 2em);
 }
 
 footer {
@@ -152,7 +137,7 @@ footer {
   z-index: 1;
   height: calc(100vh - 2em);
   border-left: 1px solid $text-color;
-  background-color: $page-color;
+  // background-color: $page-color;
   width: 16.66%;
   & > div {
     border-bottom: 1px solid $text-color;
@@ -163,6 +148,16 @@ footer {
       display: block;
       padding: 1em;
       height: 100%;
+      transition: 0.4s background-color cubic-bezier(0.075, 0.82, 0.165, 1),
+        0.4s color cubic-bezier(0.075, 0.82, 0.165, 1);
+      font-size: 1.5em;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      &:hover,
+      &.active {
+        background-color: $text-color;
+        color: $page-color;
+      }
       span {
         position: absolute;
         bottom: 1em;
@@ -260,7 +255,13 @@ footer {
       justify-content: space-between;
       padding: 1em 0;
       border-top: 1px solid $text-color;
+      &:first-child {
+        border-top: none;
+      }
       .project-preview-title {
+        font-size:3em;
+        font-family: "Suisse Works", serif;
+        font-weight:500;
       }
       .project-preview-period {
         font-style: italic;

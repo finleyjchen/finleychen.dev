@@ -14,7 +14,6 @@ export default function WorkPage() {
       <SEO title="Finley Chen" />
       <div className="work">
         <div className="projects">
-        <h1>Selected Work</h1>
           <div className="projects-list">
             {projects.map(note => (
               <Project
