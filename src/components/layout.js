@@ -6,18 +6,34 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Footer from "./footer"
 import Sidebar from "./sidebar"
 import "normalize.css"
 import "../styles/styles.scss"
-import Mail from "../icons/mail.svg"
-import Twitter from "../icons/twitter.svg"
-import Github from "../icons/github.svg"
-import LinkedIn from "../icons/linkedin.svg"
-const Layout = ({ children }) => {
+import { motion, AnimatePresence } from "framer-motion"
+const duration = 0.2
+
+const variants = {
+  initial: {
+    opacity: 0,
+  },
+  enter: {
+    opacity: 1,
+    transition: {
+      duration: duration,
+      delay: duration,
+      when: 'beforeChildren',
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: duration },
+  },
+}
+
+const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -33,7 +49,17 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div className="content">
         <Sidebar />
-        <main>{children}</main>
+        <AnimatePresence>
+        <motion.main
+          key={location.pathname}
+          variants={variants}
+          initial="initial"
+          animate="enter"
+          exit="exit"
+        >
+          {children}
+        </motion.main>
+      </AnimatePresence>
         <Footer />
       </div>
     </>

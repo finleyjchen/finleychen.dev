@@ -1,5 +1,5 @@
 ---
-title: Grace Baptist Church Paso Robles
+title: Grace Baptist Paso
 period: 2019
 description: Church Site
 url: https://gracebaptistpaso.org

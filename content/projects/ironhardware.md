@@ -1,7 +1,7 @@
 ---
 title: Paso Robles Ironworks
 period: 2020
-description: Designer Wrought Iron Curtain Rods and Hardware
+description: Trusted wrought iron blacksmiths
 url: https://ironhardware.com/
 ---
 

@@ -12,6 +12,7 @@ body {
   color: $text-color;
   font-family: "Suisse Intl", sans-serif;
   font-size: 16px;
+  line-height:1.4;
   @include tablet {
     font-size: 16px;
   }
@@ -32,14 +33,33 @@ a {
 }
 
 p {
+  a {
+    background-image: linear-gradient(to bottom, #111 75%, #111 75%);
+    background-repeat: repeat-x;
+    background-size: 1px 1px;
+    background-position: 0 97%;
+  }
 }
 
 h1,
 h2,
 h3 {
-  letter-spacing: -2px;
-  font-family: "Suisse Works", serif;
-  font-weight:500;
+  letter-spacing: -1px;
+  // font-family: "Suisse Works", serif;
+  font-weight: 500;
+  line-height: 1em;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+h2 {
+  font-size:2em;
+}
+
+.center {
+  text-align:center; 
 }
 
 header {
@@ -66,6 +86,10 @@ header {
   padding: 2em 0;
   display: flex;
   position: relative;
+  flex-direction: column;
+  @include tablet {
+    flex-direction: row;
+  }
 }
 
 .sidebar {
@@ -78,69 +102,88 @@ header {
     position: relative;
     padding: 1em;
   }
-  position: fixed;
-  width: 16.66%;
-  height: calc(100vh - 2em);
+  @include tablet {
+
+    position: fixed;
+    width: 16.66%;
+    height: calc(100vh - 2em);
+  }
   border-right: 1px solid $text-color;
   p {
     margin: 0;
   }
   .bio {
     p {
-      position: absolute;
-      bottom: 1em;
-      left: 1em;
+      @include tablet {
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+        padding-right: 1em;
+      }
       line-height: 1.3;
-      padding-right: 1em;
     }
   }
 
   .social-links {
     display: flex;
-    position: absolute;
-    bottom: 1em;
-    left: 1em;
-    flex-direction: column;
+    flex-direction: row;
+    @include tablet {
+      flex-direction:column;
+      position: absolute;
+      bottom: 1em;
+      left: 1em;
+    }
     margin: 0;
     padding: 0;
     list-style: none;
+
+    .menu-item {
+      padding-right: 0.5em;
+    }
   }
 
   .meta {
     svg {
-      width:2em;
-      height:2em;
-      border:1px solid $text-color;
-      border-radius:50%;
+      width: 2em;
+      height: 2em;
+      border: 1px solid $text-color;
+      border-radius: 50%;
     }
     .time {
-      position: absolute;
-      bottom: 1em;
-      left: 1em;
+      @include tablet {
+
+        position: absolute;
+        bottom: 1em;
+        left: 1em;
+      }
     }
   }
 }
 
 main {
   width: 100%;
-  max-width:66.67%;
-  margin-left: 16.66%;
-  margin-right: 16.66%;
-  margin-left:auto;
-  margin-right:auto;
+  @include tablet {
+
+    max-width: 66.67%;
+    position: absolute;
+    left: 16.66%;
+  }
   padding: 0 1em;
   min-height: calc(100vh - 2em);
 }
 
 footer {
-  position: fixed;
   display: flex;
-  right: 0;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1;
-  height: calc(100vh - 2em);
+  @include tablet {
+
+    position: fixed;
+    right: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    height: calc(100vh - 2em);
+  }
   border-left: 1px solid $text-color;
   // background-color: $page-color;
   width: 16.66%;
@@ -153,7 +196,7 @@ footer {
       display: block;
       padding: 1em;
       height: 100%;
-      transition: 0.4s background-color cubic-bezier(0.075, 0.82, 0.165, 1),
+      transition: 0.5s background-color cubic-bezier(0.075, 0.82, 0.165, 1),
         0.4s color cubic-bezier(0.075, 0.82, 0.165, 1);
       font-size: 1.5em;
       letter-spacing: -1px;
@@ -260,48 +303,61 @@ footer {
       justify-content: space-between;
       padding: 1em 0;
       border-top: 1px solid $text-color;
-      align-items:center;
+      align-items: center;
       &:first-child {
         border-top: none;
       }
       .project-preview-title {
-        font-size:2.5em;
-        font-family: "Suisse Works", serif;
-        font-weight:500;
-        letter-spacing: -2px;
+        font-size: 4em;
+        // font-family: "Suisse Works", serif;
+        font-weight: 500;
+        letter-spacing: -1px;
+        transition: 0.4s color cubic-bezier(0.075, 0.82, 0.165, 1);
+        &:hover {
+          color: mix($text-color, #fff, 70%);
+        }
       }
       .project-preview-period {
-        // font-size: 0.75em;
+        font-size: 2em;
       }
     }
   }
 
   .testimonials {
-    flex: 0 0 33%;
+    // flex: 0 0 50%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-gap: 1em;
     margin: auto;
     @include tablet {
       padding-left: 1em;
     }
     .testimonial-author {
-      font-size: 0.75em;
+      // font-size: 0.75em;
+      span {
+
+        font-style: italic;
+      }
     }
   }
 }
 
 .about-header {
   display: grid;
-  grid-gap: 1em;
   margin: 0 -1em;
   border-bottom: 1px solid $text-color;
   @include tablet {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: calc(100vh - 2em);
   }
 
   .gatsby-image-wrapper {
     border-right: 1px solid $text-color;
+  }
+
+  .about-headline {
+    font-size:1.5em;
+    padding-left:1em;
   }
 }
 
@@ -322,5 +378,124 @@ footer {
     width: 2em;
     height: 2em;
     margin-bottom: 1em;
+  }
+}
+
+.tl-edges {
+  width: 100% !important;
+  overflow: hidden !important;
+  overflow-y: hidden !important;
+}
+
+.project-header {
+  display: flex;
+  flex-wrap:wrap;
+  align-items: center;
+  @include tablet {
+    padding:5em 0;
+  }
+
+  .project-title {
+    margin:0;
+  }
+  .project-description {
+    font-size:4em;
+    margin:0;
+    color: mix($text-color, #fff, 80%);
+  }
+
+
+  .project-period {
+    font-size: 2em;
+    font-weight: 700;
+    @include tablet {
+      flex: 0 0 33.33%;
+    }
+  }
+}
+
+.project-text {
+  @include tablet {
+    flex: 0 0 66.66%;
+  }
+}
+
+.project-meta {
+  @include tablet {
+    flex: 0 0 33.33%;
+  }
+}
+
+.project-body {
+  display:flex;
+  flex-wrap:wrap;
+  .project-content {
+    p {
+      margin:0;
+    }
+  }
+}
+
+.experience {
+  position:relative;
+  list-style: none;
+  padding:0;
+  margin:0;
+  &:before {
+    @include tablet {
+
+      content: "";
+      position: absolute;
+      width: 1px;
+      background-color: $text-color;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+    }
+  }
+
+  & > li {
+    border:1px solid $text-color;
+    padding:1em;
+    @include tablet {
+      width: 50%;
+      position: relative;
+      left: 1px;
+      &:nth-child(even) {
+        margin-left: auto;
+        margin-top: -3em;
+        // left: -1px;
+        border-left:0;
+      }
+      &:nth-child(odd) {
+        border-right:0;
+      }
+    }
+    display:flex;
+    flex-direction:column;
+    .experience-date {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size:0.75em;
+    }
+    .experience-title {
+      font-size:1.3em;
+      font-weight:500;
+      margin-bottom:0.2em;
+    }
+    & > ul {
+      padding-left:1em;
+      margin:1em 0;
+    }
+  }
+}
+
+.process {
+  display: grid;
+  @include tablet {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  & > *:first-child {
+    border-right:1px solid $text-color;
   }
 }

@@ -1,8 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import Note from "../components/note-preview"
 import { useNotesData } from "../hooks/notes-data"
@@ -10,7 +6,7 @@ import { useNotesData } from "../hooks/notes-data"
 export default function NotesPage() {
   const { edges: notes } = useNotesData()
   return (
-    <Layout>
+    <>
       <SEO title="Finley Chen" />
           <h1>Notes &amp; Writing</h1>
         <div className="card-box">
@@ -26,6 +22,6 @@ export default function NotesPage() {
           </div>
         </div>
         
-    </Layout>
+    </>
   )
 }

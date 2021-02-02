@@ -1,23 +1,33 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
+import { graphql } from "gatsby"
 import SEO from "../components/seo"
 export default function Template({ data }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   return (
-    <Layout>
-    <SEO title={frontmatter.title} />
-    <Link to="/work">See all work</Link>
-    <div className="blog-post">
-      <h1>{frontmatter.title}</h1>
-      <h2>{frontmatter.period}</h2>
-      <div
-        className="blog-post-content"
-        dangerouslySetInnerHTML={{ __html: html }}
-        />
-    </div>
-    </Layout>
+    <>
+      <SEO title={frontmatter.title} />
+      <div className="project">
+        <div className="project-header">
+          <span className="project-period">{frontmatter.period}</span>
+          <div class="project-text">
+            <h1 className="project-title">{frontmatter.title}</h1>
+            <h2 className="project-description">{frontmatter.description}</h2>
+          </div>
+        </div>
+        <div className="project-body">
+          <div className="project-meta">
+            Project Description
+          </div>
+          <div className="project-text">
+          <div
+            className="project-content"
+            dangerouslySetInnerHTML={{ __html: html }}
+            />
+            </div>
+        </div>
+      </div>
+    </>
   )
 }
 
@@ -28,6 +38,7 @@ export const pageQuery = graphql`
       frontmatter {
         period
         title
+        description
       }
     }
   }

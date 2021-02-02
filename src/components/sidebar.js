@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React from "react"
 import { DateTime } from "luxon"
 import YinYang from "../icons/yin-yang.svg"
@@ -34,8 +33,6 @@ function Clock(props) {
 
 
 const Sidebar = () => {
-
-  var currentTime = new DateTime.local().toLocaleString(DateTime.TIME_WITH_SHORT_OFFSET);
   return(
     <aside className="sidebar">
     <div className="bio">
@@ -78,8 +75,8 @@ const Sidebar = () => {
       <YinYang />
       <div className="time">
 
-      San Luis Obispo
       <Clock /> 
+      San Luis Obispo
       </div>
     </div>
   </aside>

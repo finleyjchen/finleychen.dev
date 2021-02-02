@@ -1,8 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import Project from "../components/project-preview"
 import { useProjectsData } from "../hooks/projects-data"
@@ -10,7 +6,7 @@ import { useProjectsData } from "../hooks/projects-data"
 export default function WorkPage() {
   const { edges: projects } = useProjectsData()
   return (
-    <Layout>
+    <>
       <SEO title="Finley Chen" />
       <div className="work">
         <div className="projects">
@@ -33,9 +29,9 @@ export default function WorkPage() {
               by far the best results we have experienced in our long history of
               website programming."
             </p>
-            <h3 className="testimonial-author">
-              Matt Miller, <strong>Paso Robles Ironworks</strong>
-            </h3>
+            <span className="testimonial-author">
+              Matt Miller, <span>Paso Robles Ironworks</span>
+            </span>
           </div>
           <div className="testimonial">
             <p className="testimonial-body">
@@ -45,12 +41,12 @@ export default function WorkPage() {
               explain things simply to me and not make it too technical. He’s a
               pleasure to work with and I highly recommend him."
             </p>
-            <h3 className="testimonial-author">
-              Nancy Fox, <strong>Skinnykitchen</strong>
-            </h3>
+            <span className="testimonial-author">
+              Nancy Fox, <span>Skinnykitchen</span>
+            </span>
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
