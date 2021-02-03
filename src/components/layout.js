@@ -47,7 +47,7 @@ const Layout = ({ children, location }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Finley Chen`} />
-      <div className={"content " + (location.pathname == "/" ? 'home' : '')}>
+      <div className="content">
         {/* <Sidebar /> */}
         <AnimatePresence>
         <motion.main
