@@ -1,5 +1,6 @@
 import React from "react"
 import { DateTime } from "luxon"
+import { Link } from "gatsby"
 import YinYang from "../icons/yin-yang.svg"
 import { useState, useEffect } from 'react';
 
@@ -36,10 +37,16 @@ const Sidebar = () => {
   return(
     <aside className="sidebar">
     <div className="bio">
-      <p>
-        Finley Chen is a San Luis Obispo-based Web Developer and Designer
-        with a specialty in eCommerce, migrations, and SEO.
-      </p>
+    <div>
+      <Link to="/work" activeClassName="active" >01<span> Selected Work</span></Link>
+    </div>
+    <div>
+      <Link to="/about" activeClassName="active" >02<span> About</span></Link>
+    </div>
+    <div>
+      <Link to="/notes" activeClassName="active" >03<span> Notes</span></Link>
+    </div>
+    
     </div>
     <div>
     <p>Currently available for freelance projects.</p>

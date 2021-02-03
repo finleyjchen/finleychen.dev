@@ -13,7 +13,6 @@ export const useProjectsData = () => {
                         excerpt(pruneLength: 250)
                         frontmatter {
                             period
-                            path
                             title
                         }
                         fileAbsolutePath

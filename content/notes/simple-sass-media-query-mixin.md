@@ -1,7 +1,6 @@
 ---
 title: Simple Sass Media Query Mixin
 date: 2020-12-24
-path: /simple-sass-media-query-mixin
 ---
 
 ```css

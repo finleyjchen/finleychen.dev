@@ -6,22 +6,30 @@ import React from "react"
 const Header = ({ siteTitle }) => (
   <header>
     <div>
-        <Link to="/" className="logo">{siteTitle}</Link>
+      <Link to="/" className="logo">
+        Finley Chen
+      </Link>
     </div>
-    <div>
-    {/* <ThemeToggler>
-        {({ theme, toggleTheme }) => (
-          <label>
-            <input
-              type="checkbox"
-              onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
-              checked={theme === 'dark'}
-            />{' '}
-            Dark mode
-          </label>
-        )}
-      </ThemeToggler> */}
-    </div>
+    <nav className="menu">
+      <div>
+        <Link to="/work" activeClassName="active">
+          <span> Portfolio</span>
+        </Link>
+      </div>
+      <div>
+        <Link to="/about" activeClassName="active">
+          <span> About</span>
+        </Link>
+      </div>
+      <div>
+        <Link to="/notes" activeClassName="active">
+          <span> Notes</span>
+        </Link>
+      </div>
+      <div>
+        <a href="mailto:finleyjchen@gmail.com?subject=Proposal&body=Hi%20Finley,%0D%0A">Contact</a>
+      </div>
+    </nav>
   </header>
 )
 

@@ -12,7 +12,7 @@ body {
   color: $text-color;
   font-family: "Suisse Intl", sans-serif;
   font-size: 16px;
-  line-height:1.4;
+  line-height: 1.4;
   @include tablet {
     font-size: 16px;
   }
@@ -30,14 +30,22 @@ a {
   text-decoration: none;
   color: $text-color;
   position: relative;
+  &.button {
+    font-family: "Suisse Intl Mono";
+    border: 2px solid $text-color;
+    padding:0.5em;
+    &:hover {
+      text-decoration: line-through;
+    }
+  }
 }
 
 p {
   a {
-    background-image: linear-gradient(to bottom, #111 75%, #111 75%);
-    background-repeat: repeat-x;
-    background-size: 1px 1px;
-    background-position: 0 97%;
+    font-family: "Suisse Intl Mono";
+    &:hover {
+      text-decoration: line-through;
+    }
   }
 }
 
@@ -51,207 +59,128 @@ h3 {
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 2.5em;
+  @include tablet {
+    font-size: 4em;
+  }
 }
 
 h2 {
-  font-size:2em;
+  font-size: 1.5em;
+  @include tablet {
+    font-size: 2.5em;
+  }
+}
+
+h3 {
+  font-size: 1.2em;
+  @include tablet {
+    font-size: 1.4em;
+  }
 }
 
 .center {
-  text-align:center; 
+  text-align: center;
 }
 
 header {
   position: fixed;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
-  z-index: 1;
-  height: 2em;
-  padding: 0 1em;
-  border-bottom: 1px solid $text-color;
-  background-color: $page-color;
+  z-index: 100;
+  padding: 1em;
+  font-family: "Suisse Intl Mono";
+
+  top: 0;
+  @include tablet {
+    padding: 2em;
+  }
+
+  a {
+    &:hover {
+      text-decoration: line-through;
+    }
+  }
+  // border-bottom: 1px solid $text-color;
+  // background-color: $page-color;
   width: 100%;
-  .header-line {
-    display: none;
-    @include tablet {
-      display: block;
+  .menu {
+    text-align: right;
+    & > * {
     }
   }
 }
 
 .content {
-  padding: 2em 0;
-  display: flex;
+  margin-bottom: 100px;
+  padding: 10em 0;
   position: relative;
-  flex-direction: column;
+  z-index: 1;
+  background-color: $page-color;
   @include tablet {
     flex-direction: row;
-  }
-}
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  & > div {
-    border-bottom: 1px solid $text-color;
-    flex: 0 0 33.33%;
-    width: 100%;
-    position: relative;
-    padding: 1em;
-  }
-  @include tablet {
-
-    position: fixed;
-    width: 16.66%;
-    height: calc(100vh - 2em);
-  }
-  border-right: 1px solid $text-color;
-  p {
-    margin: 0;
-  }
-  .bio {
-    p {
-      @include tablet {
-        position: absolute;
-        bottom: 1em;
-        left: 1em;
-        padding-right: 1em;
-      }
-      line-height: 1.3;
-    }
-  }
-
-  .social-links {
-    display: flex;
-    flex-direction: row;
-    @include tablet {
-      flex-direction:column;
-      position: absolute;
-      bottom: 1em;
-      left: 1em;
-    }
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    .menu-item {
-      padding-right: 0.5em;
-    }
-  }
-
-  .meta {
-    svg {
-      width: 2em;
-      height: 2em;
-      border: 1px solid $text-color;
-      border-radius: 50%;
-    }
-    .time {
-      @include tablet {
-
-        position: absolute;
-        bottom: 1em;
-        left: 1em;
-      }
-    }
   }
 }
 
 main {
   width: 100%;
-  @include tablet {
-
-    max-width: 66.67%;
-    position: absolute;
-    left: 16.66%;
-  }
+  max-width: 1000px;
+  margin: auto;
   padding: 0 1em;
-  min-height: calc(100vh - 2em);
 }
 
 footer {
+  width: 100%;
+  height: 100px;
+  background-color: $text-color;
   display: flex;
-  @include tablet {
-
-    position: fixed;
-    right: 0;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1;
-    height: calc(100vh - 2em);
+  justify-content: space-between;
+  padding: 2em;
+  font-family: "Suisse Intl Mono";
+  align-items: center;
+  position: fixed;
+  bottom: 0px;
+  z-index: 0;
+  a {
+    &:hover {
+      text-decoration: line-through;
+    }
+    color: $page-color;
   }
-  border-left: 1px solid $text-color;
-  // background-color: $page-color;
-  width: 16.66%;
-  & > div {
-    border-bottom: 1px solid $text-color;
-    flex: 0 0 33.33%;
-    width: 100%;
-    position: relative;
-    a {
-      display: block;
-      padding: 1em;
-      height: 100%;
-      transition: 0.5s background-color cubic-bezier(0.075, 0.82, 0.165, 1),
-        0.4s color cubic-bezier(0.075, 0.82, 0.165, 1);
-      font-size: 1.5em;
-      letter-spacing: -1px;
-      text-transform: uppercase;
-      &:hover,
-      &.active {
-        background-color: $text-color;
-        color: $page-color;
-      }
-      span {
-        position: absolute;
-        bottom: 1em;
-        left: 1em;
-      }
+
+  .social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    li {
+      padding: 0 0.5em;
     }
   }
 }
 
+.hero {
+}
+
 .headline {
-  font-size: 2.5em;
-  max-width: 25ch;
-  padding: 2em 0;
-  margin: auto;
-  text-align: center;
+  padding-top: 1em;
+  max-width: 700px;
+}
+
+.subtitle {
+  font-size: 1.3em;
+  font-weight: 500;
+  color: mix($text-color, #fff, 75%);
+  padding-bottom: 2em;
+  max-width: 600px;
 }
 
 .hero-links {
   display: flex;
-  justify-content: center;
-  align-items: center;
   a {
-    border: 1px solid $text-color;
-    padding: 0.5em 1em;
-    @include desktop {
-      padding: 1em 2em;
-    }
-    margin: 0 1em;
-    transition: background-color 250ms, color 250ms;
-    &:hover {
-      span {
-        transform: translate(3px, 3px);
-      }
-    }
-    background-color: $page-color;
-    &:before {
-      position: absolute;
-      content: "";
-      background-color: $text-color;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      top: 6px;
-      left: 6px;
-      transition: 0.3s all ease;
-    }
+    margin-right:1em;
   }
 }
 
@@ -308,194 +237,177 @@ footer {
         border-top: none;
       }
       .project-preview-title {
-        font-size: 4em;
         // font-family: "Suisse Works", serif;
+        font-size: 1.5em;
+        @include tablet {
+          font-size: 4em;
+        }
+        margin: 0;
         font-weight: 500;
         letter-spacing: -1px;
         transition: 0.4s color cubic-bezier(0.075, 0.82, 0.165, 1);
         &:hover {
-          color: mix($text-color, #fff, 70%);
+          color: mix($text-color, #fff, 75%);
         }
       }
       .project-preview-period {
-        font-size: 2em;
-      }
-    }
-  }
-
-  .testimonials {
-    // flex: 0 0 50%;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-gap: 1em;
-    margin: auto;
-    @include tablet {
-      padding-left: 1em;
-    }
-    .testimonial-author {
-      // font-size: 0.75em;
-      span {
-
-        font-style: italic;
+        font-size: 1.5em;
+        font-family: "Suisse Intl Mono";
       }
     }
   }
 }
 
-.about-header {
-  display: grid;
-  margin: 0 -1em;
-  border-bottom: 1px solid $text-color;
+.testimonials {
+  // flex: 0 0 50%;
+
+
+  .testimonial-author {
+    // font-size: 0.75em;
+    span {
+      font-style: italic;
+    }
+  }
+}
+
+.about-headline {
+  p {
+    font-size: 1.5em;
+  }
   @include tablet {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    min-height: calc(100vh - 2em);
-  }
-
-  .gatsby-image-wrapper {
-    border-right: 1px solid $text-color;
-  }
-
-  .about-headline {
-    font-size:1.5em;
-    padding-left:1em;
   }
 }
 
 .services {
   display: grid;
-  grid-gap: 1em;
+  margin-bottom: 2em;
+  padding: 3em 0;
   @include tablet {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid $text-color;
+    align-items: center;
+    text-align: center;
     padding: 1em;
+    font-weight: 500;
+    p {
+      margin: 0;
+      color: mix($text-color, #fff, 75%);
+    }
+    &:last-child {
+      border-right: none;
+    }
   }
   svg {
-    width: 2em;
-    height: 2em;
-    margin-bottom: 1em;
+    width: 4em;
+    height: 4em;
+    margin-bottom: 0.5em;
   }
-}
-
-.tl-edges {
-  width: 100% !important;
-  overflow: hidden !important;
-  overflow-y: hidden !important;
 }
 
 .project-header {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   align-items: center;
+  padding: 3em 0;
   @include tablet {
-    padding:5em 0;
+    padding: 5em 0;
   }
 
   .project-title {
-    margin:0;
+    margin: 0;
   }
   .project-description {
-    font-size:4em;
-    margin:0;
-    color: mix($text-color, #fff, 80%);
+    font-size: 2em;
+    @include tablet {
+      font-size: 3em;
+    }
+    margin: 0;
+    color: mix($text-color, #fff, 75%);
   }
-
 
   .project-period {
     font-size: 2em;
-    font-weight: 700;
+    width: 100%;
+    font-family: "Suisse Intl Mono";
+
     @include tablet {
-      flex: 0 0 33.33%;
+      flex: 0 0 25%;
     }
   }
 }
 
 .project-text {
   @include tablet {
-    flex: 0 0 66.66%;
+    flex: 0 0 75%;
   }
 }
 
 .project-meta {
   @include tablet {
-    flex: 0 0 33.33%;
+    flex: 0 0 25%;
   }
 }
 
 .project-body {
-  display:flex;
-  flex-wrap:wrap;
+  display: flex;
+  flex-wrap: wrap;
   .project-content {
     p {
-      margin:0;
+      margin: 0;
+      font-size: 1.4em;
     }
   }
 }
 
 .experience {
-  position:relative;
+  position: relative;
   list-style: none;
-  padding:0;
-  margin:0;
-  &:before {
-    @include tablet {
-
-      content: "";
-      position: absolute;
-      width: 1px;
-      background-color: $text-color;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-    }
-  }
-
+  padding: 0;
+  margin: 0;
   & > li {
-    border:1px solid $text-color;
-    padding:1em;
-    @include tablet {
-      width: 50%;
-      position: relative;
-      left: 1px;
-      &:nth-child(even) {
-        margin-left: auto;
-        margin-top: -3em;
-        // left: -1px;
-        border-left:0;
-      }
-      &:nth-child(odd) {
-        border-right:0;
-      }
-    }
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
     .experience-date {
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size:0.75em;
+      font-size: 0.9em;
+      font-family: "Suisse Intl Mono";
     }
     .experience-title {
-      font-size:1.3em;
-      font-weight:500;
-      margin-bottom:0.2em;
+      font-size: 1.3em;
+      font-weight: 500;
+      margin-bottom: 0.2em;
     }
     & > ul {
-      padding-left:1em;
-      margin:1em 0;
+      padding-left: 1em;
+      margin: 1em 0;
     }
   }
 }
 
-.process {
-  display: grid;
+.text-block {
+  display: flex;
+  flex-direction: column;
+  padding: 3em 0;
   @include tablet {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  & > *:first-child {
-    border-right:1px solid $text-color;
+    flex-direction: row;
+
+    & > *:first-child {
+      flex: 0 0 25%;
+    }
+
+    & > *:nth-child(2) {
+      flex: 0 0 75%;
+      padding-left: 2em;
+      & > *:first-child {
+        margin-top: 0;
+      }
+    }
+
+    h2 {
+      margin: 0;
+    }
   }
 }

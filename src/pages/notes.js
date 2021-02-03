@@ -7,7 +7,7 @@ export default function NotesPage() {
   const { edges: notes } = useNotesData()
   return (
     <>
-      <SEO title="Finley Chen" />
+      <SEO title="Notes" />
           <h1>Notes &amp; Writing</h1>
         <div className="card-box">
           <div>
@@ -15,8 +15,8 @@ export default function NotesPage() {
               <Note
                 title={note.node.frontmatter.title}
                 date={note.node.frontmatter.date}
-                url={note.node.frontmatter.path}
-                filePath={note.node.frontmatter.filePath}
+                url={note.node.fields.slug}
+                key={note.node.fields.slug}
               />
             ))}
           </div>

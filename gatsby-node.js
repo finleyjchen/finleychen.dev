@@ -50,7 +50,6 @@ exports.createPages = async ({ actions, graphql }) => {
         component: path.resolve(`./src/templates/project.js`),
       })
     } else {
-
       createPage({
         path: node.fields.slug,
         component: path.resolve(`./src/templates/note.js`),

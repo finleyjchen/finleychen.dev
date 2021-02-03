@@ -13,8 +13,11 @@ export const useNotesData = () => {
                         excerpt(pruneLength: 250)
                         frontmatter {
                             date(formatString: "MMMM DD, YYYY")
-                            path
                             title
+                        }
+                        fileAbsolutePath
+                        fields {
+                            slug
                         }
                     }
                 }

@@ -6,24 +6,23 @@ import Ecommerce from "../icons/ecommerce.svg"
 
 const Services = () => (
     <React.Fragment>
-    <h2>Services</h2>
       <div className="services">
         <div>
           <Website />
-          Designing and developing robust websites
-        </div>
-        <div>
-          <Hosting />
-          Hosting and maintaining your website long-term
+          <h3>Design &amp; Development</h3>
+          <p>Designing and developing robust websites with a focus on user experience.</p>
         </div>
         <div>
           <Marketing />
-          Business digital strategy &amp; search engine optimization
+          <h3>Garnering Growth</h3>
+          <p>Business digital strategy and search engine optimization to reach your customers.</p>
         </div>
         <div>
-          <Ecommerce />
-          Optimized for WooCommerce or Shopify
+          <Hosting />
+          <h3>Superior Support</h3>
+          <p>Hosting and maintaining your website long-term, with secure backups and recovery.</p>
         </div>
+
       </div>
     </React.Fragment>
 )

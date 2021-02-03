@@ -46,9 +46,9 @@ const Layout = ({ children, location }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div className="content">
-        <Sidebar />
+      <Header siteTitle={data.site.siteMetadata?.title || `Finley Chen`} />
+      <div className={"content " + (location.pathname == "/" ? 'home' : '')}>
+        {/* <Sidebar /> */}
         <AnimatePresence>
         <motion.main
           key={location.pathname}
@@ -60,8 +60,8 @@ const Layout = ({ children, location }) => {
           {children}
         </motion.main>
       </AnimatePresence>
-        <Footer />
       </div>
+        <Footer />
     </>
   )
 }
