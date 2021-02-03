@@ -26,9 +26,7 @@ const Header = ({ siteTitle }) => (
           <span> Notes</span>
         </Link>
       </div>
-      <div>
-        <a href="mailto:finleyjchen@gmail.com?subject=Proposal&body=Hi%20Finley,%0D%0A">Contact</a>
-      </div>
+
     </nav>
   </header>
 )

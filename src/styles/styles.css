@@ -262,7 +262,6 @@ footer .social-links li {
 }
 
 .headline {
-  padding-top: 1em;
   max-width: 700px;
 }
 
@@ -409,7 +408,7 @@ footer .social-links li {
 }
 
 .about-headline p {
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .services {

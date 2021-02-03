@@ -27,7 +27,9 @@ const AboutPage = () => (
           I create custom WordPress websites that are fast, accessible,
           responsive, and SEO-optimized.{" "}
         </p>
-        <div className=""></div>
+          <div>
+        <a href="mailto:finleyjchen@gmail.com?subject=Proposal&body=Hi%20Finley,%0D%0A" className="button">Tell me about your project</a>
+      </div>
       </div>
     </section>
 
