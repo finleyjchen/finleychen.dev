@@ -1,9 +1,0 @@
----
-title: Paso Robles Ironworks
-period: 2020
-description: Trusted wrought iron blacksmiths
-url: https://ironhardware.com/
----
-
-WordPress development for Grace Baptist Church in Paso Robles, CA. I designed a custom theme, organized the content into pages and categories, and optimized SEO. Additionally, I designed their website logo.
-

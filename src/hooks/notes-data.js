@@ -12,7 +12,7 @@ export const useNotesData = () => {
                         id
                         excerpt(pruneLength: 250)
                         frontmatter {
-                            date(formatString: "MMMM DD, YYYY")
+                            date(formatString: "MMM DD YYYY")
                             title
                         }
                         fileAbsolutePath

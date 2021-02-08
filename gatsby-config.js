@@ -16,13 +16,21 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [{
-          resolve: `gatsby-remark-vscode`,
-          options: {
-            theme: 'Abyss' // Or install your favorite theme from GitHub
-          }
-        }]
-      }
+        plugins: [
+          {
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              theme: "Abyss", // Or install your favorite theme from GitHub
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1500,
+            },
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -59,9 +67,9 @@ module.exports = {
       options: {
         rule: {
           include: /icons/,
-        }
-      }
-    }
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

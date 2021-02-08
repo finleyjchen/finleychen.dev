@@ -33,7 +33,8 @@ a {
   &.button {
     font-family: "Suisse Intl Mono";
     border: 2px solid $text-color;
-    padding:0.5em;
+    display: inline-block;
+    padding: 0.5em;
     &:hover {
       text-decoration: line-through;
     }
@@ -42,7 +43,7 @@ a {
 
 p {
   a {
-    font-family: "Suisse Intl Mono";
+    font-weight: 600;
     &:hover {
       text-decoration: line-through;
     }
@@ -54,8 +55,8 @@ h2,
 h3 {
   letter-spacing: -1px;
   // font-family: "Suisse Works", serif;
-  font-weight: 500;
   line-height: 1em;
+  font-weight: 600;
 }
 
 h1 {
@@ -116,8 +117,8 @@ header {
 .content {
   margin-bottom: 150px;
   position: relative;
-  padding-top:10em;
-  padding-bottom:2.5em;
+  padding-top: 10em;
+  padding-bottom: 2.5em;
   z-index: 1;
   background-color: $page-color;
   @include tablet {
@@ -136,7 +137,7 @@ main {
 
 footer {
   width: 100%;
-  height:150px;
+  height: 150px;
   background-color: $text-color;
   display: flex;
   justify-content: space-between;
@@ -148,13 +149,13 @@ footer {
   flex-direction: column;
   align-items: center;
   & > * {
-    margin-bottom:1em;
+    margin-bottom: 1em;
   }
   @include tablet {
-    height:100px;
+    height: 100px;
     flex-direction: row;
     & > * {
-      margin-bottom:0;
+      margin-bottom: 0;
     }
   }
   a {
@@ -180,11 +181,12 @@ footer {
 
 .headline {
   max-width: 700px;
+  margin-bottom: 0;
 }
 
 .subtitle {
   font-size: 1.3em;
-  font-weight: 500;
+  font-weight: 400;
   color: mix($text-color, #fff, 75%);
   padding-bottom: 2em;
   max-width: 600px;
@@ -193,7 +195,7 @@ footer {
 .hero-links {
   display: flex;
   a {
-    margin-right:1em;
+    margin-right: 1em;
   }
 }
 
@@ -201,11 +203,9 @@ footer {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 2em 0;
-  @include desktop {
-    flex-direction: row;
-  }
-  h2 {
+
+  h3 {
+    margin-top: 0;
     margin-bottom: 1em;
     flex: 0 0 20%;
   }
@@ -219,11 +219,22 @@ footer {
 
 .note-preview {
   display: flex;
-  flex-direction: column;
-  padding: 1em;
-  border: 1px solid $text-color;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid $text-color;
+  &:first-child {
+    border-top: none;
+  }
+  h3 {
+    flex: 0 0 75%;
+    padding-right: 1em;
+  }
+
   span {
-    margin-bottom: 0.5em;
+    flex: 0 0 25%;
+    text-align: right;
+    font-family: "Suisse Intl Mono";
   }
 }
 
@@ -256,7 +267,7 @@ footer {
           font-size: 4em;
         }
         margin: 0;
-        font-weight: 500;
+        font-weight: 600;
         letter-spacing: -1px;
         transition: 0.4s color cubic-bezier(0.075, 0.82, 0.165, 1);
         &:hover {
@@ -264,7 +275,9 @@ footer {
         }
       }
       .project-preview-period {
-        font-size: 1.5em;
+        @include tablet {
+          font-size: 1.4em;
+        }
         font-family: "Suisse Intl Mono";
       }
     }
@@ -273,7 +286,6 @@ footer {
 
 .testimonials {
   // flex: 0 0 50%;
-
 
   .testimonial-author {
     // font-size: 0.75em;
@@ -360,6 +372,11 @@ footer {
 }
 
 .project-meta {
+  ul {
+    list-style: none;
+    padding: 0;
+    font-family: "Suisse Intl Mono";
+  }
   @include tablet {
     flex: 0 0 25%;
   }
@@ -421,6 +438,58 @@ footer {
 
     h2 {
       margin: 0;
+    }
+  }
+}
+
+.blog-post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h3 {
+    flex: 0 0 75%;
+    padding-right: 1em;
+  }
+
+  span {
+    flex: 0 0 25%;
+    text-align: right;
+    font-family: "Suisse Intl Mono";
+  }
+}
+
+.blog-post-content {
+  max-width: 600px;
+}
+
+.gatsby-resp-image-wrapper {
+  padding: 3em 0;
+  @include tablet {
+    background-color: mix($page-color, $text-color, 95%);
+    padding: 5em;
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
+}
+
+.image-wide {
+  @include tablet {
+    margin-left: -66.66% !important;
+    margin-right: -33.33% !important;
+  }
+}
+
+.image-grid {
+  @include tablet {
+    margin-left: -66.66% !important;
+    margin-right: -33.33% !important;
+    p {
+      display: flex;
+    }
+    flex-direction: row;
+
+    .gatsby-resp-image-wrapper {
+      flex: 0 0 50%;
     }
   }
 }

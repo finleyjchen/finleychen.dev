@@ -17,14 +17,18 @@ export default function Template({ data }) {
         </div>
         <div className="project-body">
           <div className="project-meta">
-            Project Description
+            <ul>
+              {frontmatter.tech && frontmatter.tech.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
           </div>
           <div className="project-text">
-          <div
-            className="project-content"
-            dangerouslySetInnerHTML={{ __html: html }}
+            <div
+              className="project-content"
+              dangerouslySetInnerHTML={{ __html: html }}
             />
-            </div>
+          </div>
         </div>
       </div>
     </>
@@ -39,6 +43,7 @@ export const pageQuery = graphql`
         period
         title
         description
+        tech
       }
     }
   }

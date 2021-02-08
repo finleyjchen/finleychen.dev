@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 export default function Note({ title, date, url }) {
   return (
     <Link to={url} className="note-preview">
-      <span>{title}</span>
+      <h3>{title}</h3>
       <span>{date}</span>
     </Link>
   )

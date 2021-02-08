@@ -17,6 +17,18 @@
     font-weight: 500;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('../fonts/SuisseIntl-SemiBold-WebS.woff') format('woff'), url('../fonts/SuisseIntl-SemiBold-WebS.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Suisse Intl';
+    src: url('../fonts/SuisseIntl-Bold-WebS.woff') format('woff'), url('../fonts/SuisseIntl-Bold-WebS.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
 
 @font-face {
     font-family: 'Suisse Intl';
@@ -34,7 +46,7 @@
 
 @font-face {
     font-family: 'Suisse Intl Mono';
-    src: url('../fonts/SuisseIntlMono-Thin-WebS.woff') format('woff'), url('../fonts/SuisseIntlMono-Thin-WebS.woff2') format('woff2');
-    font-weight: 300;
+    src: url('../fonts/SuisseIntlMono-Bold-WebS.woff') format('woff'), url('../fonts/SuisseIntlMono-Bold-WebS.woff2') format('woff2');
+    font-weight: 700;
     font-style: normal;
 }

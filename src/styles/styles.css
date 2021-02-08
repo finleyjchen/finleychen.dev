@@ -21,6 +21,20 @@
 
 @font-face {
   font-family: 'Suisse Intl';
+  src: url("../fonts/SuisseIntl-SemiBold-WebS.woff") format("woff"), url("../fonts/SuisseIntl-SemiBold-WebS.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url("../fonts/SuisseIntl-Bold-WebS.woff") format("woff"), url("../fonts/SuisseIntl-Bold-WebS.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
   src: url("../fonts/SuisseIntl-Light-WebS.woff") format("woff"), url("../fonts/SuisseIntl-Light-WebS.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
@@ -35,8 +49,8 @@
 
 @font-face {
   font-family: 'Suisse Intl Mono';
-  src: url("../fonts/SuisseIntlMono-Thin-WebS.woff") format("woff"), url("../fonts/SuisseIntlMono-Thin-WebS.woff2") format("woff2");
-  font-weight: 300;
+  src: url("../fonts/SuisseIntlMono-Bold-WebS.woff") format("woff"), url("../fonts/SuisseIntlMono-Bold-WebS.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -82,6 +96,7 @@ a {
 a.button {
   font-family: "Suisse Intl Mono";
   border: 2px solid #2b2b2b;
+  display: inline-block;
   padding: 0.5em;
 }
 
@@ -90,7 +105,7 @@ a.button:hover {
 }
 
 p a {
-  font-family: "Suisse Intl Mono";
+  font-weight: 600;
 }
 
 p a:hover {
@@ -101,8 +116,8 @@ h1,
 h2,
 h3 {
   letter-spacing: -1px;
-  font-weight: 500;
   line-height: 1em;
+  font-weight: 600;
 }
 
 h1 {
@@ -263,11 +278,12 @@ footer .social-links li {
 
 .headline {
   max-width: 700px;
+  margin-bottom: 0;
 }
 
 .subtitle {
   font-size: 1.3em;
-  font-weight: 500;
+  font-weight: 400;
   color: #606060;
   padding-bottom: 2em;
   max-width: 600px;
@@ -294,19 +310,10 @@ footer .social-links li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 2em 0;
 }
 
-@media (min-width: 1000px) {
-  .card-box {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-}
-
-.card-box h2 {
+.card-box h3 {
+  margin-top: 0;
   margin-bottom: 1em;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 20%;
@@ -326,16 +333,36 @@ footer .social-links li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 1em;
-  border: 1px solid #2b2b2b;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid #2b2b2b;
+}
+
+.note-preview:first-child {
+  border-top: none;
+}
+
+.note-preview h3 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 75%;
+          flex: 0 0 75%;
+  padding-right: 1em;
 }
 
 .note-preview span {
-  margin-bottom: 0.5em;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+  text-align: right;
+  font-family: "Suisse Intl Mono";
 }
 
 .work {
@@ -382,7 +409,7 @@ footer .social-links li {
 .work .projects .project-preview .project-preview-title {
   font-size: 1.5em;
   margin: 0;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -1px;
   -webkit-transition: 0.4s color cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: 0.4s color cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -399,8 +426,13 @@ footer .social-links li {
 }
 
 .work .projects .project-preview .project-preview-period {
-  font-size: 1.5em;
   font-family: "Suisse Intl Mono";
+}
+
+@media (min-width: 768px) {
+  .work .projects .project-preview .project-preview-period {
+    font-size: 1.4em;
+  }
 }
 
 .testimonials .testimonial-author span {
@@ -604,5 +636,36 @@ footer .social-links li {
   .text-block h2 {
     margin: 0;
   }
+}
+
+.blog-post-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.blog-post-header h3 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 75%;
+          flex: 0 0 75%;
+  padding-right: 1em;
+}
+
+.blog-post-header span {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+  text-align: right;
+  font-family: "Suisse Intl Mono";
+}
+
+.blog-post-content {
+  max-width: 600px;
 }
 /*# sourceMappingURL=styles.css.map */

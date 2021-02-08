@@ -9,8 +9,7 @@ export default function NotesPage() {
     <>
       <SEO title="Notes" />
           <h1>Notes &amp; Writing</h1>
-        <div className="card-box">
-          <div>
+        <div className="notes-list">
             {notes.map(note => (
               <Note
                 title={note.node.frontmatter.title}
@@ -19,7 +18,6 @@ export default function NotesPage() {
                 key={note.node.fields.slug}
               />
             ))}
-          </div>
         </div>
         
     </>
