@@ -88,7 +88,6 @@ h3 {
 }
 
 header {
-  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -96,9 +95,10 @@ header {
   z-index: 100;
   padding: 1em;
   font-family: "Suisse Intl Mono";
-
+  
   top: 0;
   @include tablet {
+    position: fixed;
     padding: 2em;
   }
 
@@ -175,6 +175,12 @@ footer {
     display: flex;
     li {
       padding: 0 0.5em;
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: line-through;
+        }
+      }
     }
   }
 }
@@ -436,7 +442,7 @@ footer {
 
     & > *:nth-child(2) {
       flex: 0 0 75%;
-      padding-left: 2em;
+      padding-left: 4em;
       & > *:first-child {
         margin-top: 0;
       }
