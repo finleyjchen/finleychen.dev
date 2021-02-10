@@ -27,8 +27,11 @@ const AboutPage = () => (
           I create custom WordPress websites that are fast, accessible,
           responsive, and SEO-optimized.{" "}
         </p>
-          <div>
+          <div class="hero-links">
         <a href="mailto:finleyjchen@gmail.com?subject=Proposal&body=Hi%20Finley,%0D%0A" className="button">Tell me about your project</a>
+        <a href="/files/FinleyChenResume2020.pdf" className="button">
+            Download Resume
+          </a>
       </div>
       </div>
     </section>
@@ -191,9 +194,7 @@ const AboutPage = () => (
           individual's political knowledge and participation.
         </p>
         <p>
-          <a href="/files/FinleyChenResume2020.pdf" className="button">
-            Download Resume
-          </a>
+
         </p>
       </div>
     </section>

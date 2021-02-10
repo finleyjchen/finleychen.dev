@@ -12,7 +12,7 @@ import Footer from "./footer"
 import "normalize.css"
 import "../styles/styles.scss"
 import { motion, AnimatePresence } from "framer-motion"
-const duration = 0.2
+const duration = 0.4
 
 const variants = {
   initial: {
