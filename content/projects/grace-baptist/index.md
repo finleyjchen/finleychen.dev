@@ -2,6 +2,7 @@
 title: Grace Baptist Paso
 period: 2019
 description: Church Site
+tech: [Web Design, Web Development, eCommerce, Migration]
 url: https://gracebaptistpaso.org
 ---
 
