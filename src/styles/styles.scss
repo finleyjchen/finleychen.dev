@@ -31,12 +31,13 @@ a {
   color: $text-color;
   position: relative;
   &.button {
-    font-family: "Suisse Intl Mono";
-    border: 1px solid $text-color;
+    border: 2px solid $text-color;
     display: inline-block;
-    padding: 0.75em 1.25em;
+    padding: 0.5em 1em;
     font-size:1.2em;
+    font-weight:600;
     transition: 0.4s background-color cubic-bezier(0.075, 0.82, 0.165, 1), 0.4s color cubic-bezier(0.075, 0.82, 0.165, 1);
+
     &:hover {
       background-color: $text-color;
       color: $page-color;
@@ -70,9 +71,9 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.3em;
   @include tablet {
-    font-size: 2.5em;
+    font-size: 2em;
   }
 }
 
@@ -120,7 +121,7 @@ header {
 .content {
   margin-bottom: 150px;
   position: relative;
-  padding-top: 10em;
+  padding-top: 5em;
   padding-bottom: 2.5em;
   z-index: 1;
   background-color: $page-color;
@@ -133,7 +134,7 @@ header {
 
 main {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
   padding: 0 1em;
 }
@@ -203,8 +204,15 @@ footer {
 
 .hero-links {
   display: flex;
+  flex-direction: column;
   a {
-    margin-right: 1em;
+    margin-bottom: 1em;
+  }
+  @include tablet {
+    flex-direction:row;
+    a {
+      margin-right: 1em;
+    }
   }
 }
 
@@ -418,8 +426,10 @@ footer {
       font-family: "Suisse Intl Mono";
     }
     .experience-title {
-      font-size: 1.3em;
-      font-weight: 500;
+      @include tablet {
+        font-size: 1.3em;
+      }
+      font-weight: 600;
       margin-bottom: 0.2em;
     }
     & > ul {

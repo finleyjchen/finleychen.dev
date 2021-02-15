@@ -2,7 +2,7 @@
 title: Canterbury Gardens
 period: 2017
 description: Holiday Gift Shop
-tech: [Web Design, Web Development, eCommerce, Migration]
+tech: [Web Design, WordPress Development, eCommerce, Migration]
 url: https://yourchristmasstore.com/
 ---
 

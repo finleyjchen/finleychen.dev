@@ -27,12 +27,17 @@ const AboutPage = () => (
           I create custom WordPress websites that are fast, accessible,
           responsive, and SEO-optimized.{" "}
         </p>
-          <div class="hero-links">
-        <a href="mailto:finleyjchen@gmail.com?subject=Proposal&body=Hi%20Finley,%0D%0A" className="button">Tell me about your project</a>
-        <a href="/files/FinleyChenResume2020.pdf" className="button">
+        <div className="hero-links">
+          <a
+            href="mailto:finleyjchen@gmail.com?subject=Proposal&body=Hi%20Finley,%0D%0A"
+            className="button"
+          >
+            Tell me about your project
+          </a>
+          <a href="/files/FinleyChenResume2020.pdf" className="button">
             Download Resume
           </a>
-      </div>
+        </div>
       </div>
     </section>
 
@@ -143,7 +148,7 @@ const AboutPage = () => (
           university, online stores, and more. Aside from WordPress, I also work
           end-to-end on full-stack web applications with strong front-end skills
           in JavaScript, PHP, and React with a focus on accessible and
-          functional UI/UX.
+          functional UI/UX and an eye for design and good typography.
         </p>
 
         <ul className="dash">
@@ -193,9 +198,7 @@ const AboutPage = () => (
           political science studies the effects of different social media on an
           individual's political knowledge and participation.
         </p>
-        <p>
-
-        </p>
+        <p></p>
       </div>
     </section>
   </>

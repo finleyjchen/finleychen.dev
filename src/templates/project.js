@@ -10,7 +10,7 @@ export default function Template({ data }) {
       <div className="project">
         <div className="project-header">
           <span className="project-period">{frontmatter.period}</span>
-          <div class="project-text">
+          <div className="project-text">
             <h1 className="project-title">{frontmatter.title}</h1>
             <h2 className="project-description">{frontmatter.description}</h2>
           </div>
@@ -18,9 +18,8 @@ export default function Template({ data }) {
         <div className="project-body">
           <div className="project-meta">
             <ul>
-              {frontmatter.tech && frontmatter.tech.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
+              {frontmatter.tech &&
+                frontmatter.tech.map((item, i) => <li key={i}>{item}</li>)}
             </ul>
           </div>
           <div className="project-text">
