@@ -11,9 +11,8 @@ export default function IndexPage() {
           Frictionless web development + design for small businesses
         </h1>
         <p className="subtitle">
-          I make things on the web for small businesses. Specializing in custom
-          WordPress websites that are fast, accessible, responsive, and
-          SEO-optimized.
+          Custom websites that are fast, accessible,
+          responsive, and SEO-optimized.
         </p>
         <div className="hero-links">
           <Link className="button" to="/work">
