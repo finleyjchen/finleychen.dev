@@ -48,17 +48,19 @@ const Layout = ({ children, location }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Finley Chen`} />
       <div className="content">
         {/* <Sidebar /> */}
-        <AnimatePresence>
+        {/* <AnimatePresence>
         <motion.main
           key={location.pathname}
           variants={variants}
           initial="initial"
           animate="enter"
           exit="exit"
-        >
+        > */}
+        <main>
           {children}
-        </motion.main>
-      </AnimatePresence>
+        </main>
+        {/* </motion.main>
+      </AnimatePresence> */}
       </div>
         <Footer />
     </>

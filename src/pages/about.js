@@ -32,9 +32,9 @@ const AboutPage = () => (
             href="mailto:finleyjchen@gmail.com?subject=Proposal&body=Hi%20Finley,%0D%0A"
             className="button"
           >
-            Tell me about your project
+            Get In Touch
           </a>
-          <a href="/files/FinleyChenResume2020.pdf" className="button">
+          <a href="/finley-chen-resume-2021.pdf" className="button">
             Download Resume
           </a>
         </div>
