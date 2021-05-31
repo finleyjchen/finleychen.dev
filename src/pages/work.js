@@ -17,6 +17,7 @@ export default function WorkPage() {
                 period={note.node.frontmatter.period}
                 url={note.node.fields.slug}
                 key={note.node.fields.slug}
+                tech={note.node.frontmatter.tech}
               />
             ))}
           </div>

@@ -14,6 +14,7 @@ export const useProjectsData = () => {
                         frontmatter {
                             period
                             title
+                            tech
                         }
                         fileAbsolutePath
                         fields {

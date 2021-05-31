@@ -27,16 +27,17 @@ img {
 }
 
 a {
-  text-decoration:none;
+  text-decoration: none;
   color: $text-color;
   position: relative;
   &.button {
     border: 2px solid $text-color;
     display: inline-block;
     padding: 0.5em 1em;
-    font-size:1.2em;
-    font-weight:600;
-    transition: 0.4s background-color cubic-bezier(0.075, 0.82, 0.165, 1), 0.4s color cubic-bezier(0.075, 0.82, 0.165, 1);
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: 0.4s background-color cubic-bezier(0.075, 0.82, 0.165, 1),
+      0.4s color cubic-bezier(0.075, 0.82, 0.165, 1);
     text-align: center;
     &:hover {
       background-color: $text-color;
@@ -45,7 +46,8 @@ a {
   }
 }
 
-p, li {
+p,
+li {
   a {
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -95,7 +97,6 @@ header {
   z-index: 100;
   padding: 1em;
   font-family: "Suisse Intl Mono";
-  
   top: 0;
   @include tablet {
     position: fixed;
@@ -110,13 +111,11 @@ header {
   // border-bottom: 1px solid $text-color;
   // background-color: $page-color;
   width: 100%;
-  .menu {
-    text-align: right;
-    & > * {
-    }
-  }
 }
 
+.menu {
+  text-align: right;
+}
 .content {
   margin-bottom: 150px;
   position: relative;
@@ -144,19 +143,19 @@ footer {
   background-color: $text-color;
   display: flex;
   justify-content: space-between;
-  padding: 2em;
+  padding: 1em;
   font-family: "Suisse Intl Mono";
   position: fixed;
   bottom: 0px;
   z-index: 0;
-  flex-direction: column;
+
   align-items: center;
   & > * {
     margin-bottom: 1em;
   }
   @include tablet {
     height: 100px;
-    flex-direction: row;
+    padding:2em;
     & > * {
       margin-bottom: 0;
     }
@@ -209,7 +208,7 @@ footer {
     margin-bottom: 1em;
   }
   @include tablet {
-    flex-direction:row;
+    flex-direction: row;
     a {
       margin-right: 1em;
     }
@@ -313,10 +312,9 @@ footer {
 
 .about-headline {
   p {
-    font-size:1.1em;
+    font-size: 1.1em;
     @include tablet {
       font-size: 1.3em;
-      
     }
   }
 }
@@ -405,8 +403,8 @@ footer {
   flex-wrap: wrap;
   .project-content {
     p {
-      margin-top:0;
-      font-size:1.1em;
+      margin-top: 0;
+      font-size: 1.1em;
       @include tablet {
         font-size: 1.3em;
       }
@@ -486,10 +484,10 @@ footer {
 }
 
 .gatsby-resp-image-wrapper {
-  padding: 3em 0;
   @include tablet {
-    background-color: mix($page-color, $text-color, 95%);
-    padding: 3em;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05), 0 2px 3px rgba(0, 0, 0, 0.05),
+      0 4px 4px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05),
+      0 10px 10px rgba(0, 0, 0, 0.05);
     margin-top: 3em;
     margin-bottom: 3em;
   }
@@ -498,8 +496,8 @@ footer {
 .image-wide {
   @include tablet {
     padding: 5em;
-    margin-left: -66.66% !important;
-    margin-right: -33.33% !important;
+    margin-left: -33.33% !important;
+    margin-right: -16.66% !important;
   }
 }
 
@@ -514,8 +512,6 @@ footer {
 
     .gatsby-resp-image-wrapper {
       flex: 0 0 50%;
-
-      
     }
   }
 }

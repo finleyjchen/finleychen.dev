@@ -2,6 +2,7 @@
 title: Art By Seb
 period: 2020
 description: Student Portfolio
+tech: [Content Strategy, Web Design, WordPress Development, eCommerce]
 url: https://artbyseb.com/
 ---
 

@@ -10,3 +10,11 @@ tech: [Web Design, WordPress Development, eCommerce, Migration, Content Strategy
 WordPress Development and Design for wrought iron curtain rod and hardware company Paso Robles Ironworks. Migration from a deprecated custom CodeIgniter build to WordPress/WooCommerce.
 
 [ironhardware.com](https://ironhardware.com)
+
+<div class="image-wide">
+
+![ironhardware.com scrot](./ihw-scrot-2.png)
+![ironhardware.com scrot](./ihw-scrot-1.png)
+
+
+</div>

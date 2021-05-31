@@ -29,6 +29,12 @@ module.exports = {
               maxWidth: 1500,
             },
           },
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              rel: null,
+            }
+          }
         ],
       },
     },
@@ -70,6 +76,7 @@ module.exports = {
         },
       },
     },
+    
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
