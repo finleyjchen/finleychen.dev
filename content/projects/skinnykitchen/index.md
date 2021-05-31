@@ -13,6 +13,6 @@ Skinnykitchen is a popular healthy recipe blog run by Nancy Fox averaging over 5
 
 <div class="image-grid">
 
-![Skinnykitchen Desktop](./skinnyktichen-scrot.png)
+![Skinnykitchen Desktop](./skinnykitchen-scrot.png)
 
 </div>
