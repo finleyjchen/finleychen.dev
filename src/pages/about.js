@@ -18,14 +18,14 @@ const AboutPage = () => (
         <p>
           {" "}
           Hi, I'm Finley. I make things on the web for small businesses. I'm
-          currently a freelancer working on several projects, most notably{" "}
-          <a href="https://www.skinnykitchen.com">Skinnykitchen</a> and a
-          redesign for{" "}
-          <a href="https://ironhardware.com">Paso Robles Ironworks</a>.{" "}
+          currently a full stack web developer at{" "}
+          <a href="https://digitalimpulse.com">Digital Impulse</a>.
         </p>
         <p>
-          I create custom WordPress websites that are fast, accessible,
-          responsive, and SEO-optimized.{" "}
+          I create custom WordPress websites that are accessible, responsive,
+          and user-friendly on the front-end. On the backend, they are
+          performant, search engine optimized, and intuitively designed to be
+          easy to manage content.{" "}
         </p>
         <div className="hero-links">
           <a
@@ -44,6 +44,17 @@ const AboutPage = () => (
     <section className="text-block">
       <h2 className="">Experience</h2>
       <ul className="experience">
+        <li>
+          <span className="experience-title">
+            Full Stack Web Developer at{" "}
+            <a href="https://digitalimpulse.com">Digital Impulse</a>
+          </span>
+          <span className="experience-date">July 2021 - Present</span>
+          <p>
+            Creating robust, performant WordPress sites for Digital Impulse, a
+            Boston-based web, design, and marketing agency.
+          </p>
+        </li>
         <li>
           <span className="experience-title">Freelance Web Developer</span>
           <span className="experience-date">2017 - Present</span>
@@ -96,23 +107,6 @@ const AboutPage = () => (
         </li>
         <li>
           <span className="experience-title">
-            WordPress Web Developer &amp; DevOps at{" "}
-            <a href="https://13starsmedia.com/">Colony Media</a>
-          </span>
-          <span className="experience-date">May 2018 – Aug 2019</span>
-          <ul>
-            <li>
-              Created and maintained WordPress sites using custom themes and
-              plugins
-            </li>
-            <li>
-              DevOps for deploying, backing up, and hosting 10+ sites on two
-              VPS’s, worked with phpMyAdmin, Linux, Apache, NGINX
-            </li>
-          </ul>
-        </li>
-        <li>
-          <span className="experience-title">
             Web Developer at{" "}
             <a href="https://yourchristmasstore.com">
               Canterbury Gardens &amp; Gifts
@@ -142,13 +136,20 @@ const AboutPage = () => (
       <h2 className="">Process</h2>
       <div className="process">
         <p>
-          I am a Front-End WordPress developer who has been making websites for
-          small businesses for over 3 years. I have experience working with many
-          types of individuals and organizations - churches, nonprofits, my
-          university, online stores, and more. Aside from WordPress, I also work
-          end-to-end on full-stack web applications with strong front-end skills
-          in JavaScript, PHP, and React with a focus on accessible and
-          functional UI/UX and an eye for design and good typography.
+          I am a full stack web developer who has been making websites for small
+          to medium-sized businesses for over 5 years. I have experience working
+          with many types of individuals and organizations - churches,
+          nonprofits, my university, online stores, and more.{" "}
+        </p>
+        <p>
+          {" "}
+          When using WordPress, I extend its functionality to the fullest -
+          utilizing its great parts as an admin panel and CMS, while minimizing
+          its not-so-great parts, like PHP and database queries. Aside from
+          WordPress, I also work end-to-end on full-stack web applications with
+          strong front-end skills in JavaScript, PHP, and React with a focus on
+          accessible and functional UI/UX and an eye for design and good
+          typography.
         </p>
 
         <ul className="dash">
@@ -190,10 +191,8 @@ const AboutPage = () => (
       <h2 className="">Etc</h2>
       <div className="">
         <p>
-          I'm also an undergraduate Political Science student at California
-          Polytechnic State University, San Luis Obispo. My academic work in
-          political science studies the effects of different social media on an
-          individual's political knowledge and participation.
+          I have a B.A. in Political Science from California
+          Polytechnic State University, San Luis Obispo. I studied the effects of surveillance, the emerging data-driven business model of modern technology companies, and their effects on American democracy and society.
         </p>
 
         <p>
