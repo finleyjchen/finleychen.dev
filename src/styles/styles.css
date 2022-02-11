@@ -1,0 +1,757 @@
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url("../fonts/SuisseIntl-Regular-WebS.woff") format("woff"), url("../fonts/SuisseIntl-Regular-WebS.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url("../fonts/SuisseIntl-RegularItalic-WebS.woff") format("woff"), url("../fonts/SuisseIntl-RegularItalic-WebS.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url("../fonts/SuisseIntl-Book-WebS.woff") format("woff"), url("../fonts/SuisseIntl-Book-WebS.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url("../fonts/SuisseIntl-SemiBold-WebS.woff") format("woff"), url("../fonts/SuisseIntl-SemiBold-WebS.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url("../fonts/SuisseIntl-Bold-WebS.woff") format("woff"), url("../fonts/SuisseIntl-Bold-WebS.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url("../fonts/SuisseIntl-Light-WebS.woff") format("woff"), url("../fonts/SuisseIntl-Light-WebS.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Suisse Intl Mono';
+  src: url("../fonts/SuisseIntlMono-Regular-WebXL.woff") format("woff"), url("../fonts/SuisseIntlMono-Regular-WebXL.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Suisse Intl Mono';
+  src: url("../fonts/SuisseIntlMono-Bold-WebS.woff") format("woff"), url("../fonts/SuisseIntlMono-Bold-WebS.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* breakpoints for media queries */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  color: #2b2b2b;
+  font-family: "Suisse Intl", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1000px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #2b2b2b;
+  position: relative;
+}
+
+a.button {
+  border: 2px solid #2b2b2b;
+  display: inline-block;
+  padding: 0.5em 1em;
+  font-size: 1.2em;
+  font-weight: 600;
+  -webkit-transition: 0.4s background-color cubic-bezier(0.075, 0.82, 0.165, 1), 0.4s color cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 0.4s background-color cubic-bezier(0.075, 0.82, 0.165, 1), 0.4s color cubic-bezier(0.075, 0.82, 0.165, 1);
+  text-align: center;
+}
+
+a.button:hover {
+  background-color: #2b2b2b;
+  color: #ffffff;
+}
+
+p a,
+li a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1em;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4em;
+  }
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2em;
+  }
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+@media (min-width: 768px) {
+  h3 {
+    font-size: 1.4em;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  z-index: 100;
+  padding: 1em;
+  font-family: "Suisse Intl Mono";
+  top: 0;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  header {
+    position: fixed;
+    padding: 2em;
+  }
+}
+
+header a:hover {
+  text-decoration: line-through;
+}
+
+.menu {
+  text-align: right;
+}
+
+.content {
+  margin-bottom: 150px;
+  position: relative;
+  padding-top: 0em;
+  padding-bottom: 2.5em;
+  z-index: 1;
+  background-color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: 10em 0;
+    margin-bottom: 100px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+main {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 1em;
+}
+
+footer {
+  width: 100%;
+  height: 150px;
+  background-color: #2b2b2b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2em;
+  font-family: "Suisse Intl Mono";
+  position: fixed;
+  bottom: 0px;
+  z-index: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer > * {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 768px) {
+  footer {
+    height: 100px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  footer > * {
+    margin-bottom: 0;
+  }
+}
+
+footer a {
+  color: #ffffff;
+}
+
+footer a:hover {
+  text-decoration: line-through;
+}
+
+footer .social-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .social-links li {
+  padding: 0 0.5em;
+}
+
+footer .social-links li a {
+  text-decoration: none;
+}
+
+footer .social-links li a:hover {
+  text-decoration: line-through;
+}
+
+.headline {
+  max-width: 700px;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-size: 1.3em;
+  font-weight: 400;
+  color: #606060;
+  padding-bottom: 2em;
+  max-width: 600px;
+}
+
+.hero-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.hero-links a {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 768px) {
+  .hero-links {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .hero-links a {
+    margin-right: 1em;
+  }
+}
+
+.card-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.card-box h3 {
+  margin-top: 0;
+  margin-bottom: 1em;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+}
+
+.card-box > div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(15em, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  grid-gap: 1em;
+  width: 100%;
+}
+
+.note-preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid #2b2b2b;
+}
+
+.note-preview:first-child {
+  border-top: none;
+}
+
+.note-preview h3 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 75%;
+          flex: 0 0 75%;
+  padding-right: 1em;
+}
+
+.note-preview span {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+  text-align: right;
+  font-family: "Suisse Intl Mono";
+}
+
+.work {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.work .projects {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.work .projects .project-preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1em 0;
+  border-top: 1px solid #2b2b2b;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.work .projects .project-preview:first-child {
+  border-top: none;
+}
+
+.work .projects .project-preview .project-preview-title {
+  font-size: 1.5em;
+  margin: 0;
+  font-weight: 600;
+  -webkit-transition: 0.4s color cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 0.4s color cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@media (min-width: 768px) {
+  .work .projects .project-preview .project-preview-title {
+    font-size: 4em;
+  }
+}
+
+.work .projects .project-preview .project-preview-title:hover {
+  color: #606060;
+}
+
+.work .projects .project-preview .project-preview-period {
+  font-family: "Suisse Intl Mono";
+}
+
+@media (min-width: 768px) {
+  .work .projects .project-preview .project-preview-period {
+    font-size: 1.4em;
+  }
+}
+
+.testimonials .testimonial-author span {
+  font-style: italic;
+}
+
+.about-headline p {
+  font-size: 1.1em;
+}
+
+@media (min-width: 768px) {
+  .about-headline p {
+    font-size: 1.3em;
+  }
+}
+
+.services {
+  display: -ms-grid;
+  display: grid;
+  margin-bottom: 2em;
+  padding: 3em 0;
+}
+
+@media (min-width: 768px) {
+  .services {
+    -ms-grid-columns: (minmax(0, 1fr))[3];
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.services div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 1em;
+  font-weight: 500;
+}
+
+.services div p {
+  margin: 0;
+  color: #606060;
+}
+
+.services div:last-child {
+  border-right: none;
+}
+
+.services svg {
+  width: 4em;
+  height: 4em;
+  margin-bottom: 0.5em;
+}
+
+.project-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3em 0;
+}
+
+@media (min-width: 768px) {
+  .project-header {
+    padding: 5em 0;
+  }
+}
+
+.project-header .project-title {
+  margin: 0;
+}
+
+.project-header .project-description {
+  font-size: 2em;
+  margin: 0;
+  color: #606060;
+}
+
+@media (min-width: 768px) {
+  .project-header .project-description {
+    font-size: 3em;
+  }
+}
+
+.project-header .project-period {
+  font-size: 2em;
+  width: 100%;
+  font-family: "Suisse Intl Mono";
+}
+
+@media (min-width: 768px) {
+  .project-header .project-period {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+  }
+}
+
+@media (min-width: 768px) {
+  .project-text {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 75%;
+            flex: 0 0 75%;
+  }
+}
+
+.project-meta ul {
+  list-style: none;
+  padding: 0;
+  font-family: "Suisse Intl Mono";
+}
+
+@media (min-width: 768px) {
+  .project-meta {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+  }
+}
+
+.project-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.project-body .project-content p {
+  margin-top: 0;
+  font-size: 1.1em;
+}
+
+@media (min-width: 768px) {
+  .project-body .project-content p {
+    font-size: 1.3em;
+  }
+}
+
+.experience {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.experience > li .experience-date {
+  font-size: 0.9em;
+  font-family: "Suisse Intl Mono";
+}
+
+.experience > li .experience-title {
+  font-weight: 600;
+  margin-bottom: 0.2em;
+}
+
+@media (min-width: 768px) {
+  .experience > li .experience-title {
+    font-size: 1.3em;
+  }
+}
+
+.experience > li > ul {
+  padding-left: 1em;
+  margin: 1em 0;
+}
+
+.text-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 3em 0;
+}
+
+@media (min-width: 768px) {
+  .text-block {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .text-block > *:first-child {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+  }
+  .text-block > *:nth-child(2) {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 75%;
+            flex: 0 0 75%;
+    padding-left: 4em;
+  }
+  .text-block > *:nth-child(2) > *:first-child {
+    margin-top: 0;
+  }
+  .text-block h2 {
+    margin: 0;
+  }
+}
+
+.blog-post-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.blog-post-header h3 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 75%;
+          flex: 0 0 75%;
+  padding-right: 1em;
+}
+
+.blog-post-header span {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+  text-align: right;
+  font-family: "Suisse Intl Mono";
+}
+
+.blog-post-content {
+  max-width: 600px;
+}
+
+@media (min-width: 768px) {
+  .gatsby-resp-image-wrapper {
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05), 0 2px 3px rgba(0, 0, 0, 0.05), 0 4px 4px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05), 0 10px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05), 0 2px 3px rgba(0, 0, 0, 0.05), 0 4px 4px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05), 0 10px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
+}
+
+@media (min-width: 768px) {
+  .image-wide {
+    padding: 5em;
+    margin-left: -33.33% !important;
+    margin-right: -16.66% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .image-grid {
+    margin-left: -66.66% !important;
+    margin-right: -33.33% !important;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .image-grid p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .image-grid .gatsby-resp-image-wrapper {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
