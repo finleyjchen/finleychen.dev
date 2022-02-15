@@ -1,0 +1,17 @@
+/* breakpoints for media queries */
+$narrow: 480px;
+$mid: 768px;
+$wide: 1000px;
+
+@mixin tablet {
+    @media (min-width: $mid) { @content; }
+}
+@mixin desktop {
+    @media (min-width: $wide) { @content; }
+}
+
+$page-color: #191919;
+$text-color: #fff;
+
+$font-mono:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-sans: "Suisse Intl", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,"Helvetica Neue", sans-serif; 
