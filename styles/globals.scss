@@ -12,7 +12,8 @@ body {
   background-color: $page-color;
   color: $text-color;
   font-family: $font-sans;
-
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -24,25 +25,45 @@ a {
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $page-color; 
+    border-left:1px solid $text-color;
+
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $text-color; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #f1f1f1; 
+  cursor: grab;
+}
+
 .wrapper {
 
   display: flex;
   align-items: center;
   min-height: 100vh;
-
   .container {
-    width: 90vw;
+    position:relative;
     margin:auto;
     height:95vh;
-    overflow:auto;
     border:1px solid $text-color;
-    border-radius: 6px;;
+    border-radius: 6px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 90vw;
     @include tablet {
       width: 80vw;
-      height: 80vh;
+      height: 90vh;
     }
   }
 }
@@ -50,13 +71,14 @@ a {
 
 
 .header {
-  border-bottom: 1px solid $text-color;
-  padding: 15px;
-  @include tablet {
-    padding: 2vh 2vw;
-  }
   display: flex;
   justify-content:space-between;
+  position:sticky;
+  top: 0;
+  width: 100%;
+  background-color: $page-color;
+  border-bottom: 1px solid;
+
 }
 
 .logo, .links {
@@ -65,17 +87,73 @@ a {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 400;
+  }
+  
+  .logo {
+    border-right: 1px solid $text-color;
+    display: block;
+    padding: 15px;
+    @include tablet {
+      padding: 2vh 2vw;
+    }
+    position:relative;
+    &:after {
+      content: "";
+      transition: 400ms height ease;
+      position:absolute;
+      left:0;
+      bottom:0%;
+      width:100%;
+      height:0;
+      background-color: $text-color;
+    }
+    &:hover, &.active {
+      &:after {
+        height: 5px;
+      }
+    }
+}
+
+.links {
+  display:flex;
+  & > a {
+    padding: 15px;
+    border-left:1px solid $text-color;
+    @include tablet {
+      padding: 2vh 2vw;
+    }
+    position:relative;
+    &:after {
+      content: "";
+      transition: 400ms height ease;
+      position:absolute;
+      left:0;
+      bottom:0%;
+      width:100%;
+      height:0;
+      background-color: $text-color;
+    }
+    &:hover, &.active {
+      &:after {
+        height: 5px;
+      }
+    }
+  }
 }
 
 .main {
   padding: 15px;
+  overflow:auto;
+  width: 90vw;
   @include tablet {
     padding: 2vh 2vw;
+    width: 80vw;
   }
   h2 {
     font-size: 40px;
     font-weight: 300;
     line-height: 1;
+    letter-spacing: 1px;
     @include tablet {
       font-size: 5.4vw; 
     }
@@ -83,16 +161,101 @@ a {
 }
 
 .footer {
-  padding: 15px;
-  @include tablet {
-    padding: 2vh 2vw;
-  }
-  border-top: 1px solid $text-color;
-  .description {
+  position:sticky;
+  bottom: 0;
+  background-color: $page-color;
+  display: flex;
+  justify-content:space-between;
+  border-top: 1px solid;
+  & > * {
     font-size: 14px;
     font-family: "Suisse Intl Mono";
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 400;
+    margin:0;
+    padding: 15px;
+    @include tablet {
+      padding: 2vh 2vw;
+    }
+  }
+  .description {
+    border-right: 1px solid;
+  }
+  & > a {
+    position:relative;
+    border-left: 1px solid $text-color;
+    &:after {
+      content: "";
+      transition: 400ms height ease;
+      position:absolute;
+      left:0;
+      bottom:0%;
+      width:100%;
+      height:0;
+      background-color: $text-color;
+    }
+    &:hover, &.active {
+      &:after {
+        height: 5px;
+      }
+    }
+  }
+}
+
+.project-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  li {
+    position: relative;
+    a {
+      display: block;
+      padding: 1vh 0;
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: 400;
+      & span:first-child {
+        
+      }
+      & span:last-child {
+        color: #dbdbdb;
+      }
+    }
+    &:after {
+      content: "";
+      position:absolute;
+      width:100%;
+      height: 1px;
+      left: 0;
+      background-color: $text-color;
+    }
+  }
+}
+
+section {
+  margin-bottom: 300px;
+}
+
+.about-grid {
+  display: grid;
+  gap: 2vh;
+  @include tablet {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  h2 {
+    
+  }
+  p {
+    font-size: 20px;
+    max-width: 35ch;
+    line-height: 1.5;
+  }
+  .lead {
+    font-size: 32px;
+    line-height: 1.15;
   }
 }

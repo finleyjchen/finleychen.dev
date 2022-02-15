@@ -6,14 +6,30 @@ const Home = ({ projects }) => {
   console.log(projects)
   return (
     <Layout>
-      <h2>Full stack developer creating bespoke websites that are fast, accessible, responsive, and SEO-optimized.</h2>
-      {projects.map((project, index) => {
-        return (
-          <li key={index}>
-            <Link href={`/projects/${project.slug}`}>{project.title}</Link>
-          </li>
-        )
-      })}
+      <section>
+
+      <h2>Modern web development done pragmatically.</h2>
+
+      </section>
+      <section>
+        <h2>Services &amp; Capabilities</h2>
+      </section>
+      <ul className='project-list'>
+        {projects.map((project, index) => {
+          return (
+            <li key={index}>
+              <Link href={`/projects/${project.slug}`}>
+                <h3>
+                  <span>{project.title}</span> /
+                  <span>{project.description}</span>
+                </h3>
+
+                
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
     </Layout>
   )
 }
@@ -23,6 +39,9 @@ export async function getStaticProps() {
     "title",
     "date",
     "slug",
+    "tech",
+    "period",
+    "description",
   ])
 
   return {
