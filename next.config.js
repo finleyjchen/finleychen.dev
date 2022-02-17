@@ -5,3 +5,9 @@ const withMDX = require('@next/mdx')({
     rehypePlugins: [],
   },
 })
+
+module.exports = {
+  experimental: {
+    scrollRestoration: true,
+  },
+}

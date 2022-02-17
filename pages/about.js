@@ -1,107 +1,44 @@
 import Link from 'next/link'
+import ExperienceTabs from '../components/experienceTabs'
 import Layout from '../components/layout'
 
 const About = () => {
   return (
     <Layout>
-      <section className='about-grid'>
-      <h2>Relentless learning & improvement.</h2>
-      <div>
-        <p className='lead'>Hi, I'm Finley. I'm a full stack web developer, creating websites at the Boston-based agency <a href="https://digitalimpulse.com">Digital Impulse</a>.</p>
-        <p>I create custom WordPress websites that are accessible, responsive, and user-friendly on the front-end. On the backend, they are performant, search engine optimized, and intuitively designed to be easy to manage content.</p>
-      </div>
-      </section>
-      <section className='about-grid'>
-        <h2>Experience</h2>
-        <div>
-      <ul className="experience">
-        <li>
-          <span className="experience-title">
-            Full Stack Web Developer at{" "}
-            <a href="https://digitalimpulse.com">Digital Impulse</a>
-          </span>
-          <span className="experience-date">July 2021 - Present</span>
-          <p>
-            Creating robust, performant WordPress sites for Digital Impulse, a
-            Boston-based web, design, and marketing agency.
-          </p>
-        </li>
-        <li>
-          <span className="experience-title">Freelance Web Developer</span>
-          <span className="experience-date">2017 - Present</span>
-          <p>
-            Completed many freelance projects with clients, including custom
-            WordPress websites, hosting, custom WordPress plugins, converting
-            PSD to HTML/CSS/JS, and more miscellaneous web development work. 
-          </p>
-        </li>
-        <li>
-          <span className="experience-title">
-            Frontend Web Developer at{" "}
-            <a href="https://allpeople.co/">AllPeople</a>
-          </span>
-          <span className="experience-date">Jun 2019 – Dec 2019</span>
-          <ul>
-            <li>
-              With another developer, co-created a Shopify site with 7,000+
-              products
-            </li>
-            <li>
-              Developed a referral link tracking system in AJAX, Liquid
-              templating, jQuery, and vanilla JavaScript
-            </li>
-            <li>
-              Built a similar WooCommerce/WordPress version, writing custom PHP
-              functions
-            </li>
-            <li>Designed eCommerce emails in HTML/CSS</li>
-          </ul>
-        </li>
-        <li>
-          <span className="experience-title">
-            Student Front End Developer at{" "}
-            <a href="https://afd.calpoly.edu">Cal Poly SLO</a>
-          </span>
-          <span className="experience-date">Jan 2019 – Aug 2019</span>
-          <ul>
-            <li>
-              Worked alongside the UI/UX developer for Cal Poly’s Administration
-              and Finance Department (AFD)
-            </li>
-            <li>Created dynamic forms with JavaScript, jQuery, and PHP</li>
-            <li>
-              Built responsive department pages using Foundation following best
-              practices in accessibility and UI/UX
-            </li>
-          </ul>
-        </li>
-        <li>
-          <span className="experience-title">
-            Web Developer at{" "}
-            <a href="https://yourchristmasstore.com">
-              Canterbury Gardens &amp; Gifts
-            </a>
-          </span>
-          <span className="experience-date">Apr 2017 – Sep 2018</span>
-          <ul>
-            <li>creating advertisements for mailing lists and emails</li>
-            <li>used marketing tools like MailChimp and Hubspot</li>
-            <li>managing a database of 10,000+ SKUs</li>
-            <li>web development on Magento</li>
-            <li>
-              Later rebuilt entire website on WordPress/WooCommerce with a
-              custom theme, migrating the Magento database and doing SEO work
-              for the website.
-            </li>
-            <li>
-              used custom PHP, Sass, HTML, and JavaScript to convert visitors to
-              paying customers
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <section className='grid-2 hero-bio'>
+        <h2>Relentless learning & improvement.</h2>
+        <div className='measure'>
+          <p className='lead'>Hi, I'm Finley. I'm a full stack web developer, creating websites at the Boston-based agency <a href="https://digitalimpulse.com">Digital Impulse</a>.</p>
+          <p>Working in close collaboration with my clients, I work hard to build digital products that are efficiently architected to deliver on business goals using modern web technologies.</p>
+          <p>As a freelancer, I've dealt with countless pain points businesses commonly get burned by. I strive to make rock solid websites that are accessible, responsive, and user-friendly on the front-end. On the backend - performant, robust, and intuitively designed to be easy to manage content.</p>
         </div>
       </section>
+      <section>
+        <div className='job-section'>
+        <h2>Where I've worked.</h2>
+        <div>
+          <ExperienceTabs />
+        </div>
+        </div>
+      </section>
+      <section className='testimonial-section'>
+        <h2>Testimonials</h2>
+        <div class="testimonial">
+          <p class="testimonial-body">"We have found Finley to be an absolute delight to work with. He has responded to every challenge we have presented and delivered by far the best results we have experienced in our long history of website programming."</p>
+          <span class="testimonial-author">Matt Miller, <span>Paso Robles Ironworks</span></span>
+        </div>
+        <div className="testimonial">
+          <p class="testimonial-body">"I have employed several different tech people over the years and Finley is by far the best I’ve worked with! He is extremely knowledgable in so many different areas. He has the ability to explain things simply to me and not make it too technical. He’s a pleasure to work with and I highly recommend him."</p>
+          <span class="testimonial-author">Nancy Fox, <span>Skinnykitchen</span></span>
+        </div>
+      </section>
+     <section className='grid-2'>
+       <h2>Etc</h2>
+       <div class="">
+       <p>I have a B.A. in Political Science from California Polytechnic State University, San Luis Obispo. I studied the effects of surveillance, the emerging data-driven business model of modern technology companies, and their effects on American democracy and society.</p>
+       <p>This site was created with <a href="https://nextjs.org/">Next.js</a> and hosted for free on <a href="https://vercel.com">Vercel</a>. </p>
+       <p><a href="https://github.com/finleyjchen/finleychen.dev">View Source</a></p></div>
+     </section>
     </Layout>
   )
 }

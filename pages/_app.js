@@ -1,7 +1,11 @@
 import '../styles/globals.scss'
-
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import { StoreProvider } from '../context/store'
+function App({ Component, pageProps }) {
+  return (
+    <StoreProvider>
+      <Component {...pageProps} />
+    </StoreProvider>
+  )
 }
 
-export default MyApp
+export default App

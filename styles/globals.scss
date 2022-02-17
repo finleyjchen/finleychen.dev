@@ -1,11 +1,10 @@
 @import "fonts";
 @import "variables";
+@import "homepage";
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 body {
@@ -16,124 +15,204 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
   box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 1px;
 }
 
 ::-webkit-scrollbar-track {
-  background: $page-color; 
-    border-left:1px solid $text-color;
-
+  background: $page-color;
+  // border-left:1px solid $text-color;
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $text-color; 
+  background: $text-color;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #f1f1f1; 
+  background: $light-gray;
   cursor: grab;
 }
 
-.wrapper {
+::selection {
+  background: $text-color; 
+}
+::-moz-selection {
+  background: $text-color; 
+}
 
-  display: flex;
-  align-items: center;
-  min-height: 100vh;
-  .container {
-    position:relative;
-    margin:auto;
-    height:95vh;
-    border:1px solid $text-color;
-    border-radius: 6px;
-    overflow: hidden;
+a {
+  color: inherit;
+  text-decoration: none;
+  &:not(.header a, .footer a) {
+    @include underline;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 1px;
+  @include tablet {
+    font-size: 3.4vw;
+  }
+  margin-top: 0;
+}
+h3 {
+  font-size: 32px;
+  font-weight: 400;
+
+  @include tablet {
+    font-size: 2.5vw;
+  }
+  margin-top: 0;
+}
+h4 {
+  font-size: 18px;
+  font-weight: 400;
+  @include tablet {
+    font-size: 24px;
+  }
+}
+
+p {
+  line-height: 1.4;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wrapper {
+  position: relative;
+  .hud {
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    pointer-events: none;
+    padding: 15px 0;
+    box-shadow: inset 0 0 0 15px $page-color;
+    @include tablet {
+      padding: 5vh 0;
+      box-shadow: inset 0 0 0 5vh $page-color;
+    }
+    .hud-content {
+      border: 1px solid $text-color;
+      border-radius: 6px;
+      overflow: hidden;
+      margin: auto;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      width: 90vw;
+      @include tablet {
+        width: 80vw;
+      }
+      margin: auto;
+    }
+  }
+  .container {
+    margin: auto;
+    background-color: $page-color;
     width: 90vw;
     @include tablet {
       width: 80vw;
-      height: 90vh;
     }
   }
 }
 
-
-
 .header {
   display: flex;
-  justify-content:space-between;
-  position:sticky;
+  justify-content: space-between;
+  position: absolute;
   top: 0;
   width: 100%;
   background-color: $page-color;
   border-bottom: 1px solid;
-
+  pointer-events: all;
 }
 
-.logo, .links {
-    font-size: 14px;
-    font-family: "Suisse Intl Mono";
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 400;
+.logo,
+.links {
+  font-size: 15px;
+  font-family: "Suisse Intl Mono";
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.logo {
+  border-right: 1px solid $text-color;
+  display: block;
+  padding: 15px;
+  @include tablet {
+    padding: 2vh 2vw;
   }
-  
-  .logo {
-    border-right: 1px solid $text-color;
-    display: block;
-    padding: 15px;
-    @include tablet {
-      padding: 2vh 2vw;
-    }
-    position:relative;
+  position: relative;
+  &:after {
+    content: "";
+    transition: 400ms height $ease;
+    position: absolute;
+    left: 0;
+    bottom: 0%;
+    width: 100%;
+    height: 0;
+    background-color: $text-color;
+  }
+  &:hover,
+  &.active {
     &:after {
-      content: "";
-      transition: 400ms height ease;
-      position:absolute;
-      left:0;
-      bottom:0%;
-      width:100%;
-      height:0;
-      background-color: $text-color;
+      height: 5px;
     }
-    &:hover, &.active {
-      &:after {
-        height: 5px;
-      }
-    }
+  }
 }
 
 .links {
-  display:flex;
+  display: flex;
   & > a {
     padding: 15px;
-    border-left:1px solid $text-color;
+    border-left: 1px solid $text-color;
     @include tablet {
       padding: 2vh 2vw;
     }
-    position:relative;
+    position: relative;
     &:after {
       content: "";
-      transition: 400ms height ease;
-      position:absolute;
-      left:0;
-      bottom:0%;
-      width:100%;
-      height:0;
+      transition: 400ms height $ease;
+      position: absolute;
+      left: 0;
+      bottom: 0%;
+      width: 100%;
+      height: 0;
       background-color: $text-color;
     }
-    &:hover, &.active {
+    &:hover,
+    &.active {
       &:after {
         height: 5px;
       }
@@ -142,38 +221,31 @@ a {
 }
 
 .main {
-  padding: 15px;
-  overflow:auto;
-  width: 90vw;
+  position: relative;
+  margin: 56px 0;
   @include tablet {
-    padding: 2vh 2vw;
-    width: 80vw;
-  }
-  h2 {
-    font-size: 40px;
-    font-weight: 300;
-    line-height: 1;
-    letter-spacing: 1px;
-    @include tablet {
-      font-size: 5.4vw; 
-    }
+    margin: calc(11vh + 2px) 0;
   }
 }
 
 .footer {
-  position:sticky;
+  position: absolute;
   bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: $page-color;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   border-top: 1px solid;
+  pointer-events: all;
+
   & > * {
-    font-size: 14px;
+    font-size: 15px;
     font-family: "Suisse Intl Mono";
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 400;
-    margin:0;
+    margin: 0;
     padding: 15px;
     @include tablet {
       padding: 2vh 2vw;
@@ -183,19 +255,20 @@ a {
     border-right: 1px solid;
   }
   & > a {
-    position:relative;
+    position: relative;
     border-left: 1px solid $text-color;
     &:after {
       content: "";
-      transition: 400ms height ease;
-      position:absolute;
-      left:0;
-      bottom:0%;
-      width:100%;
-      height:0;
+      transition: 400ms height $ease;
+      position: absolute;
+      left: 0;
+      bottom: 0%;
+      width: 100%;
+      height: 0;
       background-color: $text-color;
     }
-    &:hover, &.active {
+    &:hover,
+    &.active {
       &:after {
         height: 5px;
       }
@@ -203,59 +276,139 @@ a {
   }
 }
 
-.project-list {
+
+
+section {
+  border-top: 1px solid $text-color;
+  padding: 15px;
+  background-color: $page-color;
+  position:relative;
+  min-height: calc(77vh + 4px);
+  align-items: center;
   display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  flex-direction: column;
-  li {
-    position: relative;
-    a {
-      display: block;
-      padding: 1vh 0;
+  &:first-child {
+    margin-top:0;
+    border-top: none;
+  }
+  @include tablet {
+    &:first-child {
+      margin-top:56px;
     }
-    h3 {
-      font-size: 20px;
-      font-weight: 400;
-      & span:first-child {
-        
-      }
-      & span:last-child {
-        color: #dbdbdb;
-      }
-    }
-    &:after {
-      content: "";
-      position:absolute;
-      width:100%;
-      height: 1px;
-      left: 0;
-      background-color: $text-color;
-    }
+
+    padding: 2vh 2vw;
   }
 }
 
-section {
-  margin-bottom: 300px;
-}
-
-.about-grid {
+.grid-2 {
   display: grid;
   gap: 2vh;
   @include tablet {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  h2 {
-    
+}
+
+.measure {
+  max-width: 45ch;
+  margin-left: auto;
+}
+
+.services {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  display: grid;
+  gap: 30px;
+  @include tablet {
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+    gap: 100px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  h3 {
+    margin: 0;
+    align-self: center;
+  }
+  h4 {
+    margin-bottom: 20px;
+    font-family: $font-mono;
+    display: flex;
+    align-items: center;
+    svg {
+
+      @include tablet {
+        width: 30px;
+
+      }
+      height: auto;
+      margin-right: 15px;
+    }
   }
   p {
-    font-size: 20px;
     max-width: 35ch;
-    line-height: 1.5;
+    font-size: 18px;
+    margin: 0;
+  }
+}
+
+.strategies-list {
+  list-style: none;
+  margin: 0;
+  padding: 0%;
+  li {
+    margin-bottom: 20px;
+  }
+}
+
+.capabilities-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: $font-mono;
+}
+
+.hero-bio {
+  align-items: flex-end;
+  min-height: calc(77vh + 4px);
+  h2 {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  p {
+    @include tablet {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   .lead {
-    font-size: 32px;
+    font-size: 20px;
+    @include tablet {
+      font-size: 32px;
+    }
     line-height: 1.15;
+  }
+}
+
+@import 'tabs';
+
+.testimonial-section {
+  display: grid;
+  h2 {
+    margin:0;
+  }
+  grid-gap: 50px;
+  @include desktop {
+    grid-gap: 100px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

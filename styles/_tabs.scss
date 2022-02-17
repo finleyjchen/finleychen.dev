@@ -1,0 +1,100 @@
+ /* Fade */
+ .fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms $ease;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms $ease;
+}
+
+.job-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  width:100%;
+  h2 {
+    text-align: center;
+  }
+}
+
+.jobs {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction:column;
+  @include tablet {
+    flex-direction: row;
+  }
+}
+
+.tab-list {
+  display:flex;
+  flex-direction: row;
+  overflow:auto;
+  gap: 20px;
+  margin-bottom: 20px;
+  @include tablet {
+    margin-bottom: 0px;
+    gap:0;
+    flex-direction: column;
+  }
+  .tab-button {
+    padding:10px 0;
+    display: flex;
+    color: $gray;
+    border: 0;
+    white-space: nowrap;
+    cursor: pointer;
+    background-color: $page-color;
+    font-family: $font-sans;
+    transition: color 400ms $ease;
+    align-items: center;
+    @include tablet {
+      font-size: 24px;
+    }
+    &.active, &:hover, &:focus {
+      color: $text-color;
+      background-color: $page-color;
+    }
+  }
+}
+
+.job {
+  max-width: 45ch;
+}
+
+.job-name {
+  font-size: 20px;
+  margin-bottom: 10px;
+  .job-company {
+    font-weight:600;
+    @include underline;
+  }
+}
+
+.job-date {
+  font-family: $font-mono;
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: $light-gray;
+}
+
+.job-details {
+  margin: 0;
+  padding: 0;
+  list-style-type:square;
+  list-style-position: inside;
+  li {
+    margin-bottom:10px;
+    color: $gray;
+    transition: 400ms color $ease;
+    &:hover {
+      color: $text-color;
+    }
+  }
+}

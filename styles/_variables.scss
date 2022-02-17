@@ -10,8 +10,37 @@ $wide: 1000px;
     @media (min-width: $wide) { @content; }
 }
 
+@mixin underline {
+  position:relative;
+  white-space: nowrap;
+  &:after, &:before {
+    content: "";
+    transition: 400ms width $ease;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    background-color: $text-color;
+  }
+  &:before {
+    width: 100%;
+    background-color: $gray;
+  }
+  &:hover,
+  &.active {
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
 $page-color: #191919;
 $text-color: #fff;
+$gray: #9c9c9c;
+$light-gray: #cdcdcd;
 
-$font-mono:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-mono:  "Suisse Intl Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-sans: "Suisse Intl", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,"Helvetica Neue", sans-serif; 
+
+$ease: cubic-bezier(0.645, 0.045, 0.355, 1);
