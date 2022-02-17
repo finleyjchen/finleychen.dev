@@ -31,17 +31,12 @@ const Home = ({ projects }) => {
                  
         </div>
       </section>
-      
+
       <ProjectSwiper projects={projects} />
 
 
 
-      <section>
-        <h3>Notes</h3>
-        {/* <Link href={`/notes/${notes.slug}`} key={index}>
 
-        </Link> */}
-      </section>
     </Layout>
   )
 }

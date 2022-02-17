@@ -108,7 +108,6 @@ const ExperienceTabs = () => {
 
           <button
             key={i}
-            isActive={activeTabId === i}
             onClick={() => setActiveTabId(i)}
             ref={el => (tabs.current[i] = el)}
             id={`tab-${i}`}
@@ -116,7 +115,7 @@ const ExperienceTabs = () => {
             tabIndex={activeTabId === i ? '0' : '-1'}
             aria-selected={activeTabId === i ? true : false}
             aria-controls={`panel-${i}`}
-            className={`tab-button ${activeTabId === i ? "active" : ""}`}
+            className={`tab-button ${activeTabId === i ? `active` : ``}`}
           >
             <span>{job.company}</span>
           </button>
@@ -138,7 +137,7 @@ const ExperienceTabs = () => {
 
             <h3 className="job-name">
               <span className="job-title">{job.title}</span> at{" "}
-              <a class="job-company" href={job.companyUrl}>{job.company}</a>
+              <a className="job-company" href={job.companyUrl}>{job.company}</a>
             </h3>
             <p className="job-date">{job.date}</p>
             <ul className="job-details">

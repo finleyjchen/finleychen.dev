@@ -5,6 +5,7 @@ import 'swiper/css/autoplay'
 import Link from 'next/link';
 import { MDXRemote } from 'next-mdx-remote';
 import { ArrowTopRightIcon } from '@radix-ui/react-icons';
+import Image from 'next/image';
 
 const ProjectSwiper = ({ projects }) => {
   return (
@@ -47,7 +48,8 @@ const ProjectSwiper = ({ projects }) => {
 
                   <SwiperSlide key={index}>
                     <div className='project-image-wrapper'>
-                      <img class="project-image" src={`/images/${image}`} />
+                      <Image className="project-image" src={`/images/${image}`} alt={project.name + "-" + index} layout="responsive" placeholder="blur" width={1200} height={675}
+                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPcWQ8AAfcBOsScuDQAAAAASUVORK5CYII=" />
                     </div>
                   </SwiperSlide>
                 ))}

@@ -6,8 +6,3 @@ const withMDX = require('@next/mdx')({
   },
 })
 
-module.exports = {
-  experimental: {
-    scrollRestoration: true,
-  },
-}
