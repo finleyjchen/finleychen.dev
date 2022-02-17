@@ -109,6 +109,7 @@ img {
   .hud {
     min-height: 100vh;
     min-height: -webkit-fill-available;
+    transition: 400ms min-height $ease;
 
     display: flex;
     align-items: center;
@@ -135,7 +136,7 @@ img {
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
-      width: 90vw;
+      width: 95vw;
       @include tablet {
         width: 80vw;
       }
@@ -145,7 +146,7 @@ img {
   .container {
     margin: auto;
     background-color: $page-color;
-    width: 90vw;
+    width: 95vw;
     @include tablet {
       width: 80vw;
     }
@@ -228,7 +229,7 @@ img {
 
 .main {
   position: relative;
-  margin: 56px 0;
+  margin: 67px 0;
   @include tablet {
     margin: calc(11vh + 2px) 0;
   }
@@ -289,16 +290,16 @@ section {
   padding: 15px;
   background-color: $page-color;
   position:relative;
-  min-height: calc(77vh + 4px);
-  min-height: -webkit-fill-available;
-
+  transition: 400ms min-height $ease;
   align-items: center;
+  min-height: calc(83vh - 3px);
   display: flex;
   &:first-child {
     margin-top:0;
     border-top: none;
   }
   @include tablet {
+    min-height: calc(77vh + 4px);
     &:first-child {
       margin-top:56px;
     }
