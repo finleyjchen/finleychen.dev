@@ -35,12 +35,18 @@ $wide: 1000px;
   }
 }
 
-$page-color: #191919;
-$text-color: #fff;
-$gray: #9c9c9c;
-$light-gray: #cdcdcd;
+$olive: #9aa299;
+$olive-bg: #20241f;
+$olive-white: #eceeec;
+$olive-muted: #778175;
 
+$page-color: $olive-bg;
+$text-color: $olive-white;
+$gray: $olive-muted;
+$light-gray: $olive;
+$accent-color: $olive-white;
+$accent-text-color: $olive-bg; 
 $font-mono:  "Suisse Intl Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-$font-sans: "Suisse Intl", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,"Helvetica Neue", sans-serif; 
+$font-sans: "PPNeueMontreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,"Helvetica Neue", sans-serif; 
 
 $ease: cubic-bezier(0.645, 0.045, 0.355, 1);

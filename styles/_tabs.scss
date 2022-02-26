@@ -15,22 +15,16 @@
 }
 
 .job-section {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  @include tablet {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
   width:100%;
-  h2 {
-    text-align: center;
+  h3 {
   }
 }
 
-.jobs {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction:column;
-  @include tablet {
-    flex-direction: row;
-  }
-}
+
 
 .tab-list {
   display:flex;
@@ -64,9 +58,6 @@
   }
 }
 
-.job {
-  max-width: 45ch;
-}
 
 .job-name {
   font-size: 20px;
@@ -93,6 +84,7 @@
     margin-bottom:10px;
     color: $gray;
     transition: 400ms color $ease;
+    line-height:1.45;
     &:hover {
       color: $text-color;
     }

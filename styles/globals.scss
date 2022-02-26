@@ -39,12 +39,12 @@ body {
   cursor: grab;
 }
 
-::selection {
-  background: $text-color; 
-}
-::-moz-selection {
-  background: $text-color; 
-}
+// ::selection {
+//   background: $accent-text-color; 
+// }
+// ::-moz-selection {
+//   background: $accent-text-color; 
+// }
 
 a {
   color: inherit;
@@ -66,7 +66,7 @@ p {
 
 h2 {
   font-size: 36px;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1;
   letter-spacing: 1px;
   @include tablet {
@@ -76,7 +76,7 @@ h2 {
 }
 h3 {
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 500;
 
   @include tablet {
     font-size: 2.5vw;
@@ -85,7 +85,7 @@ h3 {
 }
 h4 {
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 500;
   @include tablet {
     font-size: 24px;
   }
@@ -99,103 +99,91 @@ p {
   }
 }
 
+.supertext {
+  font-family: $font-mono;
+  color: $light-gray;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size:14px;
+}
+
+.lead {
+  font-size: 20px;
+  @include tablet {
+    font-size: 32px;
+  }
+  line-height: 1.15;
+}
+
 img {
   max-width: 100%;
   height: auto;
 }
 
+.full-height {
+  @include tablet {
+    min-height: calc(100vh - 65px);
+  }
+}
+
+.sticky {
+  @include desktop {
+   position:sticky;
+   top:10vh;
+  }
+}
+
 .wrapper {
   position: relative;
-  .hud {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-    transition: 400ms min-height $ease;
 
-    display: flex;
-    align-items: center;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-    pointer-events: none;
-    padding: 15px 0;
-    box-shadow: inset 0 0 0 15px $page-color;
-    @include tablet {
-      padding: 5vh 0;
-      box-shadow: inset 0 0 0 5vh $page-color;
-    }
-    .hud-content {
-      border: 1px solid $text-color;
-      border-radius: 6px;
-      overflow: hidden;
-      margin: auto;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-      width: 95vw;
-      @include tablet {
-        width: 80vw;
-      }
-      margin: auto;
-    }
-  }
   .container {
     margin: auto;
     background-color: $page-color;
-    width: 95vw;
+    width:100%;
+    padding-left: 15px;
+    padding-right: 15px;
     @include tablet {
-      width: 80vw;
+      max-width: 1200px;
+    }
+    @include desktop {
+
+    }
+    &.container-fluid {
+      max-width:100%;
     }
   }
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  top: 0;
+
+
+.header-wrapper {
+  .header {
+    display: flex;
+    height: 45px;
+    justify-content: space-between;
+
+  }
+  position:fixed;
+  top: 20px;
+  left: 0;
   width: 100%;
-  background-color: $page-color;
-  border-bottom: 1px solid;
-  pointer-events: all;
+  z-index:100;
 }
 
 .logo,
 .links {
-  font-size: 15px;
-  font-family: "Suisse Intl Mono";
+  font-size: 12px;
+  font-family: $font-mono;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 400;
 }
 
 .logo {
-  border-right: 1px solid $text-color;
   display: block;
   padding: 15px;
   @include tablet {
-    padding: 2vh 2vw;
-  }
-  position: relative;
-  &:after {
-    content: "";
-    transition: 400ms height $ease;
-    position: absolute;
-    left: 0;
-    bottom: 0%;
-    width: 100%;
-    height: 0;
-    background-color: $text-color;
-  }
-  &:hover,
-  &.active {
-    &:after {
-      height: 5px;
-    }
+    padding: 15px 30px;
   }
 }
 
@@ -203,67 +191,38 @@ img {
   display: flex;
   & > a {
     padding: 15px;
-    border-left: 1px solid $text-color;
     @include tablet {
-      padding: 2vh 2vw;
-    }
-    position: relative;
-    &:after {
-      content: "";
-      transition: 400ms height $ease;
-      position: absolute;
-      left: 0;
-      bottom: 0%;
-      width: 100%;
-      height: 0;
-      background-color: $text-color;
-    }
-    &:hover,
-    &.active {
-      &:after {
-        height: 5px;
-      }
+      padding: 15px 30px;
     }
   }
 }
 
 .main {
   position: relative;
-  margin: 67px 0;
-  @include tablet {
-    margin: calc(11vh + 2px) 0;
-  }
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+
   background-color: $page-color;
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid;
   pointer-events: all;
 
   & > * {
     font-size: 15px;
-    font-family: "Suisse Intl Mono";
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-weight: 400;
     margin: 0;
     padding: 15px;
     @include tablet {
-      padding: 2vh 2vw;
+      padding: 15px 30px;
     }
   }
   .description {
-    border-right: 1px solid;
   }
   & > a {
     position: relative;
-    border-left: 1px solid $text-color;
     &:after {
       content: "";
       transition: 400ms height $ease;
@@ -286,26 +245,10 @@ img {
 
 
 section {
-  border-top: 1px solid $text-color;
-  padding: 15px;
-  background-color: $page-color;
   position:relative;
   transition: 400ms min-height $ease;
-  align-items: center;
-  min-height: calc(83vh - 3px);
-  display: flex;
-  &:first-child {
-    margin-top:0;
-    border-top: none;
-  }
-  @include tablet {
-    min-height: calc(77vh + 4px);
-    &:first-child {
-      margin-top:56px;
-    }
-
-    padding: 2vh 2vw;
-  }
+  margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .grid-2 {
@@ -317,52 +260,9 @@ section {
 }
 
 .measure {
-  max-width: 45ch;
-  margin-left: auto;
+  max-width: 500px;
 }
 
-.services {
-  display: flex;
-  height: 100%;
-  justify-content: space-between;
-  display: grid;
-  gap: 30px;
-  @include tablet {
-    padding-top: 20vh;
-    padding-bottom: 20vh;
-    gap: 100px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @include desktop {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  h3 {
-    margin: 0;
-    align-self: center;
-  }
-  h4 {
-    margin-bottom: 20px;
-    font-family: $font-mono;
-    display: flex;
-    align-items: center;
-    svg {
-
-      @include tablet {
-        width: 30px;
-
-      }
-      height: auto;
-      margin-right: 15px;
-    }
-  }
-  p {
-    max-width: 35ch;
-    font-size: 18px;
-    margin: 0;
-  }
-}
 
 .strategies-list {
   list-style: none;
@@ -384,12 +284,21 @@ section {
 }
 
 .hero-bio {
+  margin-top:100px;
+  margin-bottom:100px;
   align-items: flex-end;
-  h2 {
-    margin-bottom: 0;
-    margin-top: 0;
+  @include tablet {
+    align-items: flex-start;
+
   }
-  p {
+  h2 {
+    margin-top: 0;
+    margin-bottom:20vh;
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+  p:not(.lead) {
     @include tablet {
       font-size: 18px;
       line-height: 1.5;
@@ -398,25 +307,41 @@ section {
       margin-bottom: 0;
     }
   }
-  .lead {
-    font-size: 20px;
-    @include tablet {
-      font-size: 32px;
-    }
-    line-height: 1.15;
-  }
 }
+
 
 @import 'tabs';
 
 .testimonial-section {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   h2 {
     margin:0;
   }
   grid-gap: 50px;
-  @include desktop {
-    grid-gap: 100px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  .testimonial {
+    margin: 0;
+    margin-bottom:50px;
+  }
+  .testimonial-body {
+    display: block;
+    quotes: none;
+    font-size: 24px;
+    margin-bottom: 20px;
+    @include desktop {
+      font-size: 32px;
+      line-height: 1.07;
+      margin-bottom: 30px;
+    }
+  }
+  .testimonial-author {
+    color: $light-gray;
+    font-style: normal;
+    font-weight: 500;
+    font-size:20px;
+    
+    em {
+    }
   }
 }

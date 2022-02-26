@@ -7,7 +7,9 @@ const jobs = [
     title: "Full Stack Web Developer",
     date: "July 2021 - Present",
     details: [
-      "Creating robust, performant WordPress sites for Digital Impulse, a Boston-based web, design, and marketing agency.",
+      "Working with a team of other developers, designers, and content strategists to deliver websites and cms solutions to a vast array of clients",
+      "Internal projects and integration tools using technologies such as Node.js, React, WordPress, Next.js, Sanity, and PHP",
+      "Managed multiple and communications"
     ]
   },
   {
@@ -16,9 +18,9 @@ const jobs = [
     title: "Founder",
     date: "2017 - Present",
     details: [
-      "Website development, hosting, custom plugin development for multiple clients in San Luis Obispo and San Diego",
+      "Website development, hosting, custom plugin development for multiple small business clients in San Luis Obispo and San Diego",
       "Regular communication with clients",
-      "Some design and digital marketing work - running marketing campaigns and conversion analytics"
+      "Designing graphics and writing marketing copy, running ad campaigns and conversion analytics using technologies such as Hubspot, HotJar, Google Ads, and Facebook ads"
     ]
   },
   {
@@ -50,8 +52,8 @@ const jobs = [
     companyUrl: "https://yourchristmasstore.com",
     date: "Apr 2017 – Sep 2018",
     details: [
-      "creating and managing advertisements for mailing lists and emails, using Mailchimp and Hubspot",
-      "database management and automation for 10,000+ SKUs",
+      "Creating and managing ad campaigns for mailing lists and emails, using Mailchimp and Hubspot",
+      "WordPress, Quickbooks, and  database management and automation for 10,000+ SKUs",
       "web development on Magento",
       "WordPress/WooCommerce custom theme development, migrating the Magento database and doing SEO work for the website.",
       "Devops workflow setup with GCP hosting"
@@ -102,7 +104,7 @@ const ExperienceTabs = () => {
     }
   };
   return (
-    <div className="jobs">
+    <div className="jobs grid-2">
       <div className="tab-list" role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
         {jobs && jobs.map((job, i) => (
 
@@ -135,10 +137,10 @@ const ExperienceTabs = () => {
             className="job"
             >
 
-            <h3 className="job-name">
+            <h4 className="job-name">
               <span className="job-title">{job.title}</span> at{" "}
               <a className="job-company" href={job.companyUrl}>{job.company}</a>
-            </h3>
+            </h4>
             <p className="job-date">{job.date}</p>
             <ul className="job-details">
               {job.details.map((detail, index) => (
