@@ -1,6 +1,9 @@
 @import "fonts";
 @import "variables";
 @import "homepage";
+@import "header";
+@import "footer";
+@import "gallery";
 html,
 body {
 	padding: 0;
@@ -103,6 +106,14 @@ p {
 	font-family: "Times New Roman", Times, serif;
 }
 
+.mono {
+	font-size: 12px;
+	font-family: $font-mono;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 400;
+}
+
 .supertext {
 	font-family: $font-mono;
 	color: $light-gray;
@@ -156,79 +167,8 @@ img {
 	}
 }
 
-.header-wrapper {
-	.header {
-		display: flex;
-		height: 45px;
-		justify-content: space-between;
-	}
-	position: fixed;
-	top: 20px;
-	left: 0;
-	width: 100%;
-	z-index: 100;
-}
-
-.logo,
-.links {
-	font-size: 12px;
-	font-family: $font-mono;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-weight: 400;
-}
-
-.logo {
-	display: block;
-}
-
-.links {
-	display: flex;
-	gap: 15px;
-}
-
 .main {
 	position: relative;
-}
-
-.footer {
-	background-color: $page-color;
-	display: flex;
-	justify-content: space-between;
-	pointer-events: all;
-
-	& > * {
-		font-size: 15px;
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		font-weight: 400;
-		margin: 0;
-		padding: 15px;
-		@include tablet {
-			padding: 15px 30px;
-		}
-	}
-	.description {
-	}
-	& > a {
-		position: relative;
-		&:after {
-			content: "";
-			transition: 400ms height $ease;
-			position: absolute;
-			left: 0;
-			bottom: 0%;
-			width: 100%;
-			height: 0;
-			background-color: $text-color;
-		}
-		&:hover,
-		&.active {
-			&:after {
-				height: 5px;
-			}
-		}
-	}
 }
 
 section {

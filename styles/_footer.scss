@@ -1,0 +1,34 @@
+.footer {
+	background-color: $page-color;
+	display: flex;
+	justify-content: space-between;
+	pointer-events: all;
+
+	& > * {
+		font-size: 15px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 400;
+		margin: 0;
+		gap: 15px;
+	}
+	& > a {
+		position: relative;
+		&:after {
+			content: "";
+			transition: 400ms height $ease;
+			position: absolute;
+			left: 0;
+			bottom: 0%;
+			width: 100%;
+			height: 0;
+			background-color: $text-color;
+		}
+		&:hover,
+		&.active {
+			&:after {
+				height: 5px;
+			}
+		}
+	}
+}
