@@ -9,7 +9,7 @@ const jobs = [
     details: [
       "Working with a team of other developers, designers, and content strategists to deliver websites and cms solutions to a vast array of clients",
       "Internal projects and integration tools using technologies such as Node.js, React, WordPress, Next.js, Sanity, and PHP",
-      "Managed multiple and communications"
+      "We are historically a PHP/Wordpress agency, but we are currently exploring headless WP and other JAMstack solutions",
     ]
   },
   {

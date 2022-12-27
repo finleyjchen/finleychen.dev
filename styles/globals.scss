@@ -3,55 +3,55 @@
 @import "homepage";
 html,
 body {
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
 body {
-  background-color: $page-color;
-  color: $text-color;
-  font-family: $font-sans;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	background-color: $page-color;
+	color: $text-color;
+	font-family: $font-sans;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 1px;
+	width: 8px;
+	height: 1px;
 }
 
 ::-webkit-scrollbar-track {
-  background: $page-color;
-  // border-left:1px solid $text-color;
+	background: $page-color;
+	// border-left:1px solid $text-color;
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $text-color;
+	background: $text-color;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: $light-gray;
-  cursor: grab;
+	background: $light-gray;
+	cursor: grab;
 }
 
 // ::selection {
-//   background: $accent-text-color; 
+//   background: $accent-text-color;
 // }
 // ::-moz-selection {
-//   background: $accent-text-color; 
+//   background: $accent-text-color;
 // }
 
 a {
-  color: inherit;
-  text-decoration: none;
-  &:not(.header a, .footer a) {
-    @include underline;
-  }
+	color: inherit;
+	text-decoration: none;
+	&:not(.header a, .footer a) {
+		@include underline;
+	}
 }
 
 h1,
@@ -61,287 +61,271 @@ h4,
 h5,
 h6,
 p {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 h2 {
-  font-size: 36px;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 1px;
-  @include tablet {
-    font-size: 3.4vw;
-  }
-  margin-top: 0;
+	font-size: 36px;
+	font-weight: 500;
+	line-height: 1;
+	letter-spacing: 1px;
+	@include tablet {
+		font-size: 3.4vw;
+	}
+	margin-top: 0;
 }
 h3 {
-  font-size: 32px;
-  font-weight: 500;
+	font-size: 32px;
+	font-weight: 500;
 
-  @include tablet {
-    font-size: 2.5vw;
-  }
-  margin-top: 0;
+	@include tablet {
+		font-size: 2.5vw;
+	}
+	margin-top: 0;
 }
 h4 {
-  font-size: 18px;
-  font-weight: 500;
-  @include tablet {
-    font-size: 24px;
-  }
+	font-size: 18px;
+	font-weight: 500;
+	@include tablet {
+		font-size: 24px;
+	}
 }
 
 p {
-  line-height: 1.4;
-  font-size:14px;
-  @include tablet {
-    font-size: 16px;
-  }
+	line-height: 1.4;
+	font-size: 14px;
+	@include tablet {
+		font-size: 16px;
+	}
+}
+
+.serif {
+	font-family: "Times New Roman", Times, serif;
 }
 
 .supertext {
-  font-family: $font-mono;
-  color: $light-gray;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-size:14px;
+	font-family: $font-mono;
+	color: $light-gray;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-size: 14px;
 }
 
 .lead {
-  font-size: 20px;
-  @include tablet {
-    font-size: 32px;
-  }
-  line-height: 1.15;
+	font-size: 20px;
+	@include tablet {
+		font-size: 24px;
+	}
+	line-height: 1.15;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 .full-height {
-  @include tablet {
-    min-height: calc(100vh - 65px);
-  }
+	@include tablet {
+		min-height: calc(100vh - 65px);
+	}
 }
 
 .sticky {
-  @include desktop {
-   position:sticky;
-   top:10vh;
-  }
+	@include desktop {
+		position: sticky;
+		top: 10vh;
+	}
 }
 
 .wrapper {
-  position: relative;
+	position: relative;
 
-  .container {
-    margin: auto;
-    background-color: $page-color;
-    width:100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    @include tablet {
-      max-width: 1200px;
-    }
-    @include desktop {
-
-    }
-    &.container-fluid {
-      max-width:100%;
-    }
-  }
+	.container {
+		margin: auto;
+		width: 100%;
+		padding-left: 15px;
+		padding-right: 15px;
+		@include tablet {
+			max-width: 1200px;
+		}
+		@include desktop {
+		}
+		&.container-fluid {
+			max-width: 100%;
+		}
+	}
 }
 
-
-
 .header-wrapper {
-  .header {
-    display: flex;
-    height: 45px;
-    justify-content: space-between;
-
-  }
-  position:fixed;
-  top: 20px;
-  left: 0;
-  width: 100%;
-  z-index:100;
+	.header {
+		display: flex;
+		height: 45px;
+		justify-content: space-between;
+	}
+	position: fixed;
+	top: 20px;
+	left: 0;
+	width: 100%;
+	z-index: 100;
 }
 
 .logo,
 .links {
-  font-size: 12px;
-  font-family: $font-mono;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 400;
+	font-size: 12px;
+	font-family: $font-mono;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 400;
 }
 
 .logo {
-  display: block;
-  padding: 15px;
-  @include tablet {
-    padding: 15px 30px;
-  }
+	display: block;
 }
 
 .links {
-  display: flex;
-  & > a {
-    padding: 15px;
-    @include tablet {
-      padding: 15px 30px;
-    }
-  }
+	display: flex;
+	gap: 15px;
 }
 
 .main {
-  position: relative;
+	position: relative;
 }
 
 .footer {
+	background-color: $page-color;
+	display: flex;
+	justify-content: space-between;
+	pointer-events: all;
 
-  background-color: $page-color;
-  display: flex;
-  justify-content: space-between;
-  pointer-events: all;
-
-  & > * {
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 400;
-    margin: 0;
-    padding: 15px;
-    @include tablet {
-      padding: 15px 30px;
-    }
-  }
-  .description {
-  }
-  & > a {
-    position: relative;
-    &:after {
-      content: "";
-      transition: 400ms height $ease;
-      position: absolute;
-      left: 0;
-      bottom: 0%;
-      width: 100%;
-      height: 0;
-      background-color: $text-color;
-    }
-    &:hover,
-    &.active {
-      &:after {
-        height: 5px;
-      }
-    }
-  }
+	& > * {
+		font-size: 15px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 400;
+		margin: 0;
+		padding: 15px;
+		@include tablet {
+			padding: 15px 30px;
+		}
+	}
+	.description {
+	}
+	& > a {
+		position: relative;
+		&:after {
+			content: "";
+			transition: 400ms height $ease;
+			position: absolute;
+			left: 0;
+			bottom: 0%;
+			width: 100%;
+			height: 0;
+			background-color: $text-color;
+		}
+		&:hover,
+		&.active {
+			&:after {
+				height: 5px;
+			}
+		}
+	}
 }
 
-
-
 section {
-  position:relative;
-  transition: 400ms min-height $ease;
-  margin-top: 100px;
-    margin-bottom: 100px;
+	position: relative;
+	transition: 400ms min-height $ease;
+	margin-top: 100px;
+	margin-bottom: 100px;
 }
 
 .grid-2 {
-  display: grid;
-  gap: 2vh;
-  @include tablet {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+	display: grid;
+	gap: 2vh;
+	@include tablet {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
 }
 
 .measure {
-  max-width: 500px;
+	max-width: 500px;
 }
 
-
 .strategies-list {
-  list-style: none;
-  margin: 0;
-  padding: 0%;
-  li {
-    margin-bottom: 20px;
-  }
+	list-style: none;
+	margin: 0;
+	padding: 0%;
+	li {
+		margin-bottom: 20px;
+	}
 }
 
 .capabilities-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  font-family: $font-mono;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	font-family: $font-mono;
 }
 
 .hero-bio {
-  margin-top:100px;
-  margin-bottom:100px;
-  align-items: flex-end;
-  @include tablet {
-    align-items: flex-start;
-
-  }
-  h2 {
-    margin-top: 0;
-    margin-bottom:20vh;
-    @include tablet {
-      margin-bottom: 0;
-    }
-  }
-  p:not(.lead) {
-    @include tablet {
-      font-size: 18px;
-      line-height: 1.5;
-    }
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
+	margin-top: 100px;
+	margin-bottom: 100px;
+	align-items: flex-end;
+	@include tablet {
+		align-items: flex-start;
+	}
+	h2 {
+		margin-top: 0;
+		margin-bottom: 20vh;
+		@include tablet {
+			margin-bottom: 0;
+		}
+	}
+	p:not(.lead) {
+		@include tablet {
+			font-size: 18px;
+			line-height: 1.5;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
 
-
-@import 'tabs';
+@import "tabs";
 
 .testimonial-section {
-  display: flex;
-  flex-direction: column;
-  h2 {
-    margin:0;
-  }
-  grid-gap: 50px;
+	display: flex;
+	flex-direction: column;
+	h2 {
+		margin: 0;
+	}
+	grid-gap: 50px;
 
-  .testimonial {
-    margin: 0;
-    margin-bottom:50px;
-  }
-  .testimonial-body {
-    display: block;
-    quotes: none;
-    font-size: 24px;
-    margin-bottom: 20px;
-    @include desktop {
-      font-size: 32px;
-      line-height: 1.07;
-      margin-bottom: 30px;
-    }
-  }
-  .testimonial-author {
-    color: $light-gray;
-    font-style: normal;
-    font-weight: 500;
-    font-size:20px;
-    
-    em {
-    }
-  }
+	.testimonial {
+		margin: 0;
+		margin-bottom: 50px;
+	}
+	.testimonial-body {
+		display: block;
+		quotes: none;
+		font-size: 24px;
+		margin-bottom: 20px;
+		@include desktop {
+			font-size: 32px;
+			line-height: 1.07;
+			margin-bottom: 30px;
+		}
+	}
+	.testimonial-author {
+		color: $light-gray;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 20px;
+
+		em {
+		}
+	}
 }

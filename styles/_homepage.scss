@@ -3,34 +3,34 @@
 
   .hero-wrapper {
     @include tablet {
-      display: grid;
-      gap: 15px;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
 
     }
     .hero-main {
       .hero-head {
         display: flex;
-        margin-bottom: 20px;
+        gap: 5vw;
+        flex-direction: column;
         @include tablet {
-          align-items: flex-end;
-          min-height: calc(100vh - 65px);
+          flex-direction: row;
+        }
+        margin-bottom: 20px;
+        p {
+          flex: 50%;
         }
       }
     }
-    .hero-side {
+    .hero-headline {
       margin: 100px 0;
       @include tablet {
-        grid-column: span 2 / span 2;
       }
       h2 {
         margin-top: 0;
         margin-bottom:100px;
         font-size: 40px;
+        letter-spacing: -2px;
         @include tablet {
           font-size: 3.5vw;
-          max-width:500px;
-
+          
         }
       }
       .buttons {
@@ -67,9 +67,21 @@
 
 
 .services {
-
-  h3 {
-    text-align: center;
+  margin-bottom:15px;
+  .services-grid {
+    display: grid;
+    grid-auto-flow: column;
+    background-color: $gray;
+    gap: 1px;
+    border: 1px solid $gray;
+    & > div {
+      padding: 15px;
+      background-color: $page-color;
+    }
+  }
+  .supertext {
+    text-align: right;
+    margin-bottom:0;
   }
   h4 {
     margin-bottom: 10px;
