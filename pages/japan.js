@@ -2,39 +2,85 @@ import Link from 'next/link'
 import ExperienceTabs from '../components/experienceTabs'
 import Gallery from '../components/gallery'
 import Layout from '../components/layout'
-
-const tokyo = [
-    {
-        url: "/images/japan/R0000322.jpeg",
-        aspectRatio: 1.5
-    },
-    {
-        url: "/images/japan/R0000434.jpeg",
-        aspectRatio: 1.5
-    },
-    {
-        url: "/images/japan/R0000858.jpeg",
-        aspectRatio: 1.5
-    },
-    {
-        url: "/images/japan/R0000931.jpeg",
-        aspectRatio: 0.75
-    },
-    {
-        url: "/images/japan/R0000933.jpeg",
-        aspectRatio: 1.5
-    },
-]
+import * as Tabs from '@radix-ui/react-tabs';
+import { useEffect, useRef, useState } from 'react';
+import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
+import axios from "axios"
+import { DashboardIcon, GridIcon, ImageIcon, ListBulletIcon } from '@radix-ui/react-icons';
+import probe from 'probe-image-size';
+import photos from "/public/photoData.json"
 
 const Japan = () => {
+
+    const containerRef = useRef(null)
+    const [gridOpen, setGridOpen] = useState(false)
+    const [currentTab, setCurrentTab] = useState(0)
     return (
-        <Layout>
-            <section>
-                <h2>Japan, 2022</h2>
-                <p className="mono">Tokyo: December 16 - December 19</p>
-                <Gallery images={tokyo} />
-            </section>
-        </Layout>
+        <Tabs.Root className='gallery-page' defaultValue="tab-0">
+            <div className='gallery-nav header'>
+                <Link href="/" className='mono'>
+                    Finley Chen
+                </Link>
+                <Tabs.List className="TabsList" aria-label="Gallery">
+                    {photos.map((album, index) => {
+                        return (
+                            <Tabs.Trigger className="TabsTrigger" onClick={() => {
+                                setCurrentTab(index)
+                            }} value={`tab-${index}`} key={index}>
+                                {album.title}
+                            </Tabs.Trigger>
+                        )
+                    })}
+                </Tabs.List>
+                <div>
+                    <button onClick={() => {
+                        setGridOpen(false)
+                    }}>
+                        <ImageIcon />
+                    </button>
+                    <button onClick={() => {
+                        setGridOpen(true)
+                    }}>
+                        <DashboardIcon />
+                    </button>
+                </div>
+                <h1 className='mono'>Japan, 2022</h1>
+
+            </div>
+            <LocomotiveScrollProvider
+                options={
+                    {
+                        smooth: true,
+                        // ... all available Locomotive Scroll instance options 
+                        direction: "horizontal"
+                    }
+                }
+                watch={
+                    [currentTab]
+                }
+
+                containerRef={containerRef}
+            >
+                <main data-scroll-container ref={containerRef}>
+                    <div data-scroll-section>
+                        {photos.map((album, index) => {
+                            // console.log(album)
+                            return (
+                                <Tabs.Content className="tab-content" value={`tab-${index}`} key={index}>
+                                    <div className="tab-sidebar">
+                                        <h2 className='serif hero-headline'>{album.title}</h2>
+                                        <p className="mono">{album.date}</p>
+                                    </div>
+                                    <Gallery className={gridOpen ? "grid" : ""} images={album.photos} />
+                                </Tabs.Content>
+                            )
+                        })}
+
+                    </div>
+                </main>
+            </LocomotiveScrollProvider>
+        </Tabs.Root>
+
     )
 }
 

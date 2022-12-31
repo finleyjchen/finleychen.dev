@@ -3,15 +3,16 @@ import ExperienceTabs from '../components/experienceTabs'
 import Layout from '../components/layout'
 
 const About = () => {
-  return (
-    <Layout>
-      <section className='grid-2 hero-bio'>
-        <h2>Some notes and thoughts (coming soon).</h2>
-
-      </section>
-      
-    </Layout>
-  )
+    return (
+        <Layout>
+            <section className=''>
+                <h2 className='hero-headline'><i className="serif">Notes</i> and other stuff.</h2>
+            </section>
+            <section className="notes">
+                <h4><Link href="/japan">Japan Photos 2022</Link></h4>
+            </section>
+        </Layout>
+    )
 }
 
 

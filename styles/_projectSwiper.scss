@@ -1,0 +1,117 @@
+.swiper-slide {
+	text-align: center;
+	max-width: 100%;
+	cursor: grab;
+	justify-content: center;
+	width: auto;
+	padding: 15px 0;
+	@include tablet {
+	}
+}
+
+.project-card {
+	position: relative;
+	display: block;
+	padding: 30px 0;
+	@include tablet {
+		display: grid;
+		gap: 15px;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		.project-images {
+			grid-column: span 2 / span 2;
+		}
+	}
+	.project-info {
+		padding: 15px 0px;
+	}
+	.project-content {
+		color: $light-gray;
+		p {
+			font-size: 16px;
+		}
+	}
+	.project-period {
+		font-family: $font-mono;
+		font-size: 14px;
+		color: $gray;
+	}
+	.project-title,
+	.project-description {
+		font-weight: 400;
+		display: flex;
+		flex-direction: column;
+		font-size: 36px;
+	}
+	.project-description {
+		color: $gray;
+	}
+
+	.project-meta {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		gap: 15px;
+		@include tablet {
+			align-items: center;
+			flex-direction: row;
+		}
+		.project-tech {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: flex;
+			font-size: 14px;
+			letter-spacing: -0.5px;
+			font-family: $font-mono;
+			flex-wrap: wrap;
+			gap: 5px;
+			li {
+				margin-right: 10px;
+				color: $gray;
+				transition: color 400ms ease;
+				&:hover {
+					color: $text-color;
+				}
+			}
+		}
+	}
+
+	.project-url {
+		font-family: $font-mono;
+		font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		position: relative;
+		color: $gray;
+		transition: color 400ms ease;
+		display: inline-block;
+		svg {
+			margin-left: 5px;
+			width: 20px;
+			height: auto;
+			vertical-align: middle;
+		}
+		&:after,
+		&:before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 1px;
+			width: 0%;
+			background-color: $text-color;
+			transition: width 400ms ease;
+		}
+		&:before {
+			width: 100%;
+			background-color: $gray;
+		}
+		&:hover {
+			color: $text-color;
+			&:after {
+				background-color: $text-color;
+				width: 100%;
+			}
+		}
+	}
+}

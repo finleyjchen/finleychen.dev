@@ -1,5 +1,11 @@
 import Link from "next/link"
 import { useRouter } from "next/router";
+import { motion } from "framer-motion"
+const headerLinks = [
+    "about",
+    "work",
+    "notes"
+]
 
 const Header = () => {
     const router = useRouter();
@@ -10,12 +16,26 @@ const Header = () => {
 
                 <div className="header">
                     <div className="">
-                        <Link href="/"><a className={router.pathname == "/" ? "logo active" : "logo"}>Finley Chen</a></Link>
+                        <Link href="/" className={router.pathname == '/' ? "active" : ""}>
+                            <>
+                                Finley Chen
+                            </>
+
+                        </Link>
                     </div>
                     <div className="links">
-                        <Link href="/about"><a className={router.pathname == "/about" ? "active" : ""}>About</a></Link>
-                        <Link href="/work"><a className={router.pathname == "/work" ? "active" : ""}>Work</a></Link>
-                        <Link href="/notes"><a className={router.pathname == "/notes" ? "active" : ""}>Notes</a></Link>
+                        {headerLinks.map((link, index) => {
+                            return (
+                                <Link href={`/${link}`} key={index} className={router.pathname == '/' + link ? "active" : ""}>
+                                    <>
+                                        {link}
+                                    </>
+
+                                </Link>
+                            )
+                        })}
+
+
                     </div>
                 </div>
             </div>

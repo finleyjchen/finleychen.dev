@@ -4,39 +4,44 @@ $mid: 768px;
 $wide: 1000px;
 
 @mixin tablet {
-    @media (min-width: $mid) { @content; }
+	@media (min-width: $mid) {
+		@content;
+	}
 }
 @mixin desktop {
-    @media (min-width: $wide) { @content; }
+	@media (min-width: $wide) {
+		@content;
+	}
 }
 
 @mixin underline {
-  position:relative;
-  white-space: nowrap;
-  &:after, &:before {
-    content: "";
-    transition: 400ms width $ease;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background-color: $text-color;
-  }
-  &:before {
-    width: 100%;
-    background-color: $gray;
-  }
-  &:hover,
-  &.active {
-    &:after {
-      width: 100%;
-    }
-  }
+	position: relative;
+	white-space: nowrap;
+	&:after,
+	&:before {
+		content: "";
+		transition: 400ms width $ease;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 0%;
+		height: 2px;
+		background-color: $text-color;
+	}
+	&:before {
+		width: 100%;
+		background-color: $gray;
+	}
+	&:hover,
+	&.active {
+		&:after {
+			width: 100%;
+		}
+	}
 }
 
 $olive: #9aa299;
-$olive-bg: #20241f;
+$olive-bg: #1a1b1a;
 $olive-white: #eceeec;
 $olive-muted: #778175;
 
@@ -45,8 +50,10 @@ $text-color: $olive-white;
 $gray: $olive-muted;
 $light-gray: $olive;
 $accent-color: $olive-white;
-$accent-text-color: $olive-bg; 
-$font-mono:  "Suisse Intl Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-$font-sans: "PPNeueMontreal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,"Helvetica Neue", sans-serif; 
+$accent-text-color: $olive-bg;
+$font-mono: "Suisse Intl Mono", SFMono-Regular, Menlo, Monaco, Consolas,
+	"Liberation Mono", "Courier New", monospace;
+$font-sans: "PPNeueMontreal", -apple-system, BlinkMacSystemFont, "Segoe UI",
+	Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
 $ease: cubic-bezier(0.645, 0.045, 0.355, 1);
