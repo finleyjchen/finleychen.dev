@@ -37,11 +37,13 @@ const Home = ({ projects }) => {
     // }, [ref]);
 
     return (
-        <Layout>
+        <Layout
+            title="Home"
+            description="Finley Chen's personal website. Full-stack web engineer/developer based in Cambridge, MA. Contact for availability."
+        >
             <Hero />
             <Process />
             <Capabilities />
-
             <div className='bottom' ref={ref}></div>
         </Layout>
     )

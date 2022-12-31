@@ -5,7 +5,7 @@ import { getAllProjects } from "../lib/api";
 
 const WorkPage = ({ projects }) => {
     return (
-        <Layout>
+        <Layout title="Work" description="Finley Chen's portfolio of selected websites he's developed.">
             <section >
                 <h2 className="hero-headline">Selected <i className="serif">Work</i>.</h2>
             </section>

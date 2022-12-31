@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 
 const About = () => {
     return (
-        <Layout>
+        <Layout title="About" description="Full stack developer specializing in WordPress, ReactJS to create bespoke websites.">
             <section className='grid-2 hero-bio'>
                 <Image src={'/images/finley-quebec.jpeg'} width="400" height="600" alt="finley-chen" />
                 <div>
