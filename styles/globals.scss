@@ -140,6 +140,13 @@ img {
 	height: auto;
 }
 
+.d-lg-none {
+	display: none;
+	@include tablet {
+		display: block;
+	}
+}
+
 .full-height {
 	@include tablet {
 		min-height: calc(100vh - 65px);

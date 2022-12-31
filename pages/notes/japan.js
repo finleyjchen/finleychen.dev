@@ -44,7 +44,7 @@ const Japan = () => {
                             )
                         })}
                     </Tabs.List>
-                    <div>
+                    <div class="d-lg-none">
                         <button onClick={() => {
                             setGridOpen(false)
                         }}>
@@ -64,13 +64,16 @@ const Japan = () => {
                         {
                             smooth: true,
                             // ... all available Locomotive Scroll instance options 
-                            direction: "horizontal"
+                            direction: "horizontal",
+                            smartphone: {
+                                smooth: true,
+                                direction: "vertical"
+                            }
                         }
                     }
                     watch={
-                        [currentTab]
+                        [currentTab, gridOpen]
                     }
-
                     containerRef={containerRef}
                 >
                     <main data-scroll-container ref={containerRef}>
