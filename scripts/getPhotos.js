@@ -17,7 +17,7 @@ const albums = [
     {
         title: "Osaka",
         date: "December 23 - December 27",
-        albumId: "s99FAFi5jGzC99sY8"
+        albumId: "F23ANQ6VKGQ4FVzp6"
     },
 
 ];
@@ -53,7 +53,7 @@ function extractPhotos(content) {
     while (result = regex.exec(content)) {
 
         // console.log(result[1])
-        const imgUrl = result[1] + '=w2000'
+        const imgUrl = result[1] + '=w1440'
         links.add({ url: imgUrl })
 
     }

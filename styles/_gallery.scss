@@ -62,18 +62,21 @@
 }
 .gallery {
 	display: flex;
-	gap: 24px;
+	gap: 12px;
 	align-items: center;
 	flex-direction: column;
+	padding: 0 15px;
 	@include tablet {
+		padding: 0;
 		padding-top: 50px;
+		padding-bottom: 40px;
 		flex-direction: row;
 	}
 	& > div {
 		position: relative;
 		@include tablet {
 			height: 100%;
-			max-height: 90%;
+			max-height: 100%;
 			img {
 				max-height: 100%;
 				width: auto;

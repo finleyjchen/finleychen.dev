@@ -39,8 +39,10 @@ const About = () => {
                 <h3>Etc</h3>
                 <div className="">
                     <p>I earned a B.A in Political Science from California Polytechnic State University, San Luis Obispo. I studied the effects of surveillance, the emerging data-driven business model of modern technology companies, and their effects on American democracy and society.</p>
+                    <p>When not developing, I enjoy video games, skateboarding and cooking. If I could eat ramen every meal I would.</p>
                     <p>This site was created with <a href="https://nextjs.org/">Next.js</a> and hosted for free on <a href="https://vercel.com">Vercel</a>. </p>
                     <p><a href="https://github.com/finleyjchen/finleychen.dev">View Source</a></p></div>
+
             </section>
         </Layout>
     )

@@ -10,12 +10,13 @@ import { DashboardIcon, GridIcon, ImageIcon, ListBulletIcon } from '@radix-ui/re
 import probe from 'probe-image-size';
 import photos from "/public/photoData.json"
 import Head from 'next/head';
+import { useLocomotiveScroll } from 'react-locomotive-scroll'
 
 const Japan = () => {
-
     const containerRef = useRef(null)
     const [gridOpen, setGridOpen] = useState(false)
     const [currentTab, setCurrentTab] = useState(0)
+
     return (
         <>
             <Head>
@@ -44,7 +45,7 @@ const Japan = () => {
                             )
                         })}
                     </Tabs.List>
-                    <div class="d-lg-none">
+                    {/* <div className="d-lg-none">
                         <button onClick={() => {
                             setGridOpen(false)
                         }}>
@@ -55,45 +56,53 @@ const Japan = () => {
                         }}>
                             <DashboardIcon />
                         </button>
-                    </div>
+                    </div> */}
                     <h1 className='mono'>Japan, 2022</h1>
 
                 </div>
-                <LocomotiveScrollProvider
-                    options={
-                        {
-                            smooth: true,
-                            // ... all available Locomotive Scroll instance options 
-                            direction: "horizontal",
-                            smartphone: {
-                                smooth: true,
-                                direction: "vertical"
-                            }
-                        }
-                    }
-                    watch={
-                        [currentTab, gridOpen]
-                    }
-                    containerRef={containerRef}
-                >
-                    <main data-scroll-container ref={containerRef}>
-                        <div data-scroll-section>
-                            {photos.map((album, index) => {
-                                // console.log(album)
-                                return (
-                                    <Tabs.Content className="tab-content" value={`tab-${index}`} key={index}>
-                                        <div className="tab-sidebar">
-                                            <h2 className='serif hero-headline'>{album.title}</h2>
-                                            <p className="mono">{album.date}</p>
-                                        </div>
-                                        <Gallery className={gridOpen ? "grid" : ""} images={album.photos} />
-                                    </Tabs.Content>
-                                )
-                            })}
 
-                        </div>
-                    </main>
-                </LocomotiveScrollProvider>
+                {photos.map((album, index) => {
+                    // console.log(album)
+                    return (
+                        <Tabs.Content className="" value={`tab-${index}`} key={index}>
+
+                            <LocomotiveScrollProvider
+                                options={
+                                    {
+                                        smooth: true,
+                                        // ... all available Locomotive Scroll instance options 
+                                        direction: "horizontal",
+                                        multiplier: 3.1,
+                                        smartphone: {
+                                            smooth: true,
+                                            direction: "vertical"
+                                        }
+                                    }
+                                }
+                                watch={
+                                    [currentTab, gridOpen]
+                                }
+                                containerRef={containerRef}
+                            >
+                                <main data-scroll-container ref={containerRef}>
+                                    <div data-scroll-section className=''>
+                                        <div className="tab-content">
+
+                                            <div className="tab-sidebar">
+                                                <h2 className='serif hero-headline'>{album.title}</h2>
+                                                <p className="mono">{album.date}</p>
+                                            </div>
+                                            <Gallery className={gridOpen ? "grid" : ""} images={album.photos} />
+                                        </div>
+
+                                    </div>
+                                </main>
+                            </LocomotiveScrollProvider>
+                        </Tabs.Content>
+
+                    )
+                })}
+
             </Tabs.Root>
         </>
     )
