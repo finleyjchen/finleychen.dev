@@ -23,7 +23,7 @@ const About = () => {
                 </div>
             </section>
             <section className='grid-2'>
-                <h3>Testimonials</h3>
+                <h3 className='serif'>Testimonials</h3>
                 <div className='testimonial-section'>
                     <blockquote className="testimonial">
                         <q className="testimonial-body">&quot;We have found Finley to be an absolute delight to work with. He has responded to every challenge we have presented and delivered by far the best results we have experienced in our long history of website programming.&quot;</q>
@@ -38,7 +38,7 @@ const About = () => {
             <section className='grid-2'>
                 <h3>Etc</h3>
                 <div className="">
-                    <p>I have a B.A. in Political Science from California Polytechnic State University, San Luis Obispo. I studied the effects of surveillance, the emerging data-driven business model of modern technology companies, and their effects on American democracy and society.</p>
+                    <p>I earned a B.A in Political Science from California Polytechnic State University, San Luis Obispo. I studied the effects of surveillance, the emerging data-driven business model of modern technology companies, and their effects on American democracy and society.</p>
                     <p>This site was created with <a href="https://nextjs.org/">Next.js</a> and hosted for free on <a href="https://vercel.com">Vercel</a>. </p>
                     <p><a href="https://github.com/finleyjchen/finleychen.dev">View Source</a></p></div>
             </section>

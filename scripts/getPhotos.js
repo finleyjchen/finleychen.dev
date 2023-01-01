@@ -12,7 +12,7 @@ const albums = [
     {
         title: "Kyoto",
         date: "December 21 - December 23",
-        albumId: "s99FAFi5jGzC99sY8"
+        albumId: "4a1zSTsqsvrQd6Ug7"
     },
     {
         title: "Osaka",
